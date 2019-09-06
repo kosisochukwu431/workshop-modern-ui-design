@@ -9,4 +9,6 @@
 <br>
 <br>
 
-(Work in Progress)
+Repository for the design workshop »Modern UI Design«, taught by
+[Rieke Helmers](https://riekehelmers.com) and [Jonas Kuske](https://jonaskuske.com) at HS Bremerhaven.
+Work in Progress.
