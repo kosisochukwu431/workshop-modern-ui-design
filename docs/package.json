@@ -1,0 +1,19 @@
+{
+  "name": "workshop-modern-ui-design",
+  "version": "1.0.0",
+  "description": "The landing page for the design workshop at HS Bremerhaven",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet.\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaskuske/workshop-modern-ui-design.git"
+  },
+  "author": "Jonas Kuske",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/jonaskuske/workshop-modern-ui-design/issues"
+  },
+  "homepage": "https://github.com/jonaskuske/workshop-modern-ui-design#readme"
+}

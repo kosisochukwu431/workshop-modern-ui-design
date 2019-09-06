@@ -1,3 +1,24 @@
+.DS_Store
+Thumbs.db
+/dist
+hint-report/
+.firebase/
+.cache/
+
+# local env files
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea
+.vscode
+.vs
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
 # Logs
 logs
 *.log
@@ -53,9 +74,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
 
 # next.js build output
 .next
