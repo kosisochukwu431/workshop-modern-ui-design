@@ -20,7 +20,7 @@ body {
 .header__inner {
   padding: 15px 0;
   visibility: visible;
-  transition: visibility 0ms 250ms, opacity 150ms 250ms ease-in;
+  transition: visibility 0ms 270ms, opacity 150ms 270ms ease-in;
 }
 .header--splash .header__inner {
   visibility: hidden;
