@@ -1,0 +1,131 @@
+:root {
+  /* Primary + durchsichtige Variante für Gradients */
+  --primary: #a11cf2;
+  --primary-o9: rgba(161, 28, 242, 0.9);
+  --primary-o5: rgba(161, 28, 242, 0.47);
+  /* Accent + durchsichtige Variante für Gradients */
+  --accent: #13fed4;
+  --accent-o9: rgba(19, 254, 212, 0.9);
+  --accent-o5: rgba(19, 254, 212, 0.5);
+  --light-gray: #e8e8e8;
+  --gray: #c4c4c4;
+  --dark-gray: #5e5e5e;
+  --black-gray: #2b2b2b;
+  --white: #ffffff;
+  --black: #000000;
+  --danger: #ef500c;
+}
+
+/* Font styles */
+.display {
+  font: 500 4.8rem / 6rem Quicksand, sans-serif;
+}
+.heading {
+  font: 500 2.8rem / 3.5rem Quicksand, sans-serif;
+}
+.subheading {
+  font: 600 2rem / 2.7rem Quicksand, sans-serif;
+}
+.body {
+  font: 300 1.6rem / 2.2px Nunito, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-center {
+  align-items: center;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-white {
+  color: var(--white);
+}
+
+.bg-primary {
+  background: linear-gradient(180deg, var(--primary-o9) 0%, var(--primary-o5) 100%);
+}
+.bg-accent {
+  background: linear-gradient(180deg, var(--accent-o9) 0%, var(--accent-o5) 100%);
+}
+.bg-gradient {
+  background: linear-gradient(275.25deg, var(--accent) 2.12%, var(--primary) 86.62%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Margin Helfer-Klassen */
+.mb-0,
+.my-0 {
+  margin-bottom: 0;
+}
+.mt-0,
+.my-0 {
+  margin-top: 0;
+}
+.ml-0,
+.mx-0 {
+  margin-left: 0;
+}
+.mr-0,
+.mx-0 {
+  margin-right: 0;
+}
+.mb-auto,
+.my-auto {
+  margin-bottom: auto;
+}
+.mt-auto,
+.my-auto {
+  margin-top: auto;
+}
+.ml-auto,
+.mx-auto {
+  margin-left: auto;
+}
+.mr-auto,
+.mx-auto {
+  margin-right: auto;
+}
+
+.w-auto {
+  width: auto;
+}
+.w-100 {
+  width: 100%;
+}
+.h-auto {
+  height: auto;
+}
+.h-100 {
+  height: 100%;
+}
+
+.grid-max-width {
+  max-width: 900px;
+}
+@media screen and (min-width: 1550px) {
+  .grid-max-width {
+    max-width: 1400px;
+  }
+}

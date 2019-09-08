@@ -1,23 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="robots" content="noindex,nofollow" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css"
-    />
     <title>Modern UI Design</title>
+    <!-- REMOVE BEFORE GOING LIVE! -->
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/utilities.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:300,400,600|Quicksand:500,600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js" defer></script>
+    <script type="module" src="./main.js"></script>
   </head>
-  <body>
-    <h1>Workshop: Modern UI Design</h1>
-    <p>
-      Hier entsteht die informative Landing Page für den Workshop »Modern UI Design«, der von
-      <a href="https://jonaskuske.com?lang=de">Jonas Kuske</a> und
-      <a href="https://riekehelmers.com">Rieke Helmers</a> an der HS Bremerhaven ausgerichtet wird.
-    </p>
-    <p>Termine, Inhalte, Veranstaltungsort und mehr TBA.</p>
+
+  <body class="flex flex-column align-items-start">
+    <!-- Header / Splashscreen -->
+    <div class="header header--splash flex bg-gradient text-white">
+      <!-- Header -->
+      <header class="header__inner flex align-items-center w-100 grid-max-width mx-auto">
+        <a href="#" class="mr-auto h-100 w-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 547.95 350.29"
+            class="h-100"
+            aria-labelledby="logoTitle"
+          >
+            <title id="logoTitle">Modern UI Design Logo</title>
+            <defs>
+              <style>
+                .line {
+                  fill: none;
+                  stroke: #fff;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 39.69px;
+                }
+                .dot {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <path
+              class="line"
+              d="M19.84,283.07l0-262.4,120.5,176.26L263,19.84l0,211s0,99.61,96.92,99.61c98,0,98-99.61,98-99.61V60"
+            />
+            <path
+              class="dot"
+              d="M506.71,82.37q-5.41-4.53-5.4-14.46V61q0-10.37,5.83-14.68T525.06,42q12.09,0,17.49,4.54T548,61v6.92q0,10.35-5.61,14.68t-17.71,4.32Q512.11,86.91,506.71,82.37Z"
+            />
+          </svg>
+        </a>
+
+        <a href="#start">Start</a>
+        <a href="#termine">Termine</a>
+        <a href="#about">About</a>
+        <a href="#anmelden" class="button">Anmelden</a>
+      </header>
+
+      <!-- Splash -->
+      <div class="splash flex flex-column align-items-center text-center">
+        <div class="my-auto">
+          <svg
+            id="splash__logo"
+            class="splash__logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 687.69 454.8"
+            aria-hidden="true"
+          >
+            <defs>
+              <style>
+                .splash__logo__line {
+                  fill: none;
+                  stroke: #fff;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 39.69px;
+                }
+                .splash__logo__dot {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <path
+              class="splash__logo__line"
+              d="M85.46,335.33l0-262.41L206,249.18,328.64,72.1l0,211s0,99.61,96.92,99.61c98,0,98-99.61,98-99.61V112.24"
+            />
+            <path
+              class="splash__logo__dot"
+              d="M572.32,134.63q-5.4-4.55-5.39-14.47v-6.91q0-10.36,5.83-14.69t17.92-4.32q12.09,0,17.49,4.54t5.4,14.47v6.91q0,10.36-5.62,14.68t-17.7,4.32Q577.71,139.16,572.32,134.63Z"
+            />
+          </svg>
+          <h1 class="display mt-0">Modern UI Design</h1>
+        </div>
+
+        <div class="spinner" role="status">
+          <span class="sr-only">Wird geladen...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <main class="flex-grow flex flex-column align-items-start grid-max-width mx-auto">
+      <div class="card bg-accent mt-auto mb-auto">
+        <p>
+          Was ist UX-/UI Design? Wo ist der Unterschied zwischen UX und UI? Warum brauchen wir das?
+          Wie gestaltet man gute Interfaces? Und vor allem: wie wendet man das alles sinnvoll an?
+          Diese Fragen und mehr klären wir in unserem 4-teiligen Workshop zum Thema Modern UI
+          Design. Seid dabei und meldet euch jetzt an!
+        </p>
+      </div>
+    </main>
   </body>
 </html>
