@@ -1,4 +1,4 @@
-import Vivus from "./vivus.mjs";
+import Vivus from "./vivus.js";
 
 /** @type {Document['querySelector']} */
 const $ = (selector, root = document) => root.querySelector(selector);
