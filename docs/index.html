@@ -5,29 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Modern UI Design</title>
-    <!-- REMOVE BEFORE GOING LIVE! -->
+    <!-- TODO: REMOVE BEFORE GOING LIVE! -->
     <meta name="robots" content="noindex,nofollow" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/icons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/icons/safari-pinned-tab.svg"
+      color="#a11cf2"
+    />
+
+    <!-- [if IE]
+      <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+    <![endif]-->
+
+    <meta name="msapplication-TileColor" content="#a11cf2" />
+    <meta
+      name="msapplication-config"
+      content="./assets/icons/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#a11cf2" />
+
     <link rel="stylesheet" href="./assets/fonts/index.css" />
+    <!-- <link rel="stylesheet" href="build/tailwind.css" /> -->
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/utilities.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./vivus.js" defer></script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
   </head>
 
-  <body class="flex flex-column align-items-start">
+  <body class="flex flex-col items-start text-body">
     <!-- Header / Splashscreen -->
-    <div class="header header--splash flex bg-gradient text-white">
+    <div class="header flex bg-gradient text-white">
+      <script>
+        if (!window.location.hash) {
+          document.querySelector(".header").classList.add("header--splash");
+        }
+      </script>
+
       <!-- Header -->
       <header
-        class="header__inner flex align-items-center w-100 grid-max-width mx-auto"
+        class="header__inner flex items-center w-full grid-content-width mx-auto"
       >
-        <a href="#" class="mr-auto h-100 w-auto">
+        <a href="#start" class="mr-auto line-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 547.95 350.29"
-            class="h-100"
+            width="70"
             aria-labelledby="logoTitle"
           >
             <title id="logoTitle">Modern UI Design Logo</title>
@@ -63,7 +105,7 @@
       </header>
 
       <!-- Splash -->
-      <div class="splash flex flex-column align-items-center text-center">
+      <div class="splash flex flex-col items-center text-center">
         <div class="my-auto">
           <svg
             id="splash__logo"
@@ -95,7 +137,7 @@
               d="M572.32,134.63q-5.4-4.55-5.39-14.47v-6.91q0-10.36,5.83-14.69t17.92-4.32q12.09,0,17.49,4.54t5.4,14.47v6.91q0,10.36-5.62,14.68t-17.7,4.32Q577.71,139.16,572.32,134.63Z"
             />
           </svg>
-          <h1 class="display mt-0">Modern UI Design</h1>
+          <h1 class="text-display mt-0">Modern UI Design</h1>
         </div>
 
         <div class="spinner" role="status">
@@ -105,18 +147,280 @@
     </div>
 
     <!-- Content -->
-    <main
-      class="flex-grow flex flex-column align-items-start grid-max-width mx-auto"
-    >
-      <div class="card bg-accent mt-auto mb-auto">
-        <p>
-          Was ist UX-/UI Design? Wo ist der Unterschied zwischen UX und UI?
-          Warum brauchen wir das? Wie gestaltet man gute Interfaces? Und vor
-          allem: wie wendet man das alles sinnvoll an? Diese Fragen und mehr
-          klären wir in unserem 4-teiligen Workshop zum Thema Modern UI Design.
-          Seid dabei und meldet euch jetzt an!
-        </p>
-      </div>
+    <main class="w-full flex-grow flex flex-col items-center">
+      <section
+        id="start"
+        class="w-full mh-80vh mb-5 grid-content-width flex justify-between items-center"
+      >
+        <img class="w-50" src="./assets/images/drag.svg" alt="" />
+        <div
+          class="w-full grid-content-width absolute t-0 h-100 l-50 transform-l-n50"
+        >
+          <div
+            class="card bg-accent-gradient absolute t-50 transform-t-n50 l-50 ml-5 p-3"
+            style="margin-left: 8rem"
+          >
+            <p class="mb-2">
+              Was ist UX-/UI Design? Wo ist der Unterschied zwischen UX und UI?
+              Warum brauchen wir das? Wie gestaltet man gute Interfaces? Und vor
+              allem: wie wendet man das alles sinnvoll an? Diese Fragen und mehr
+              klären wir in unserem 4-teiligen Workshop zum Thema Modern UI
+              Design. Seid dabei und meldet euch jetzt an!
+            </p>
+            <div class="text-center">
+              <a href="#anmelden" class="button">Anmelden</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full mb-5 grid-content-width text-white" id="termine">
+        <div class="card bg-primary-gradient w-full p-7">
+          <h2 class="mb-5">Termine</h2>
+          <ol class="m-0 p-0 mx-5">
+            <li class="flex justify-between align-center mb-3">
+              <div>
+                <h3 class="mb-0">1 – Flowing through the process</h3>
+                <p>Designprozess – warum, was, wie und wie nicht?</p>
+              </div>
+              <time class="font-bold ml-5 text-right flex-shrink-0"
+                >28.10.2019<br /><span class="text-body"
+                  >10:30 - 15:30 Uhr</span
+                ></time
+              >
+            </li>
+            <li class="flex justify-between align-center mb-3">
+              <div>
+                <h3 class="mb-0">2 – Make it pretty, make it work</h3>
+                <p>
+                  Usability-Patterns, Farben, Typografie – Tipps zum Gestalten
+                </p>
+              </div>
+              <time class="font-bold ml-5 text-right flex-shrink-0"
+                >28.10.2019<br /><span class="text-body"
+                  >10:30 - 15:30 Uhr</span
+                ></time
+              >
+            </li>
+            <li class="flex justify-between align-center mb-3">
+              <div>
+                <h3 class="mb-0">3 – Design for everyone</h3>
+                <p>
+                  Von Smartwatch bis TV und Tastatur bis Screenreader: wie man
+                  Interfaces baut, die in jeder Situation funktionieren
+                </p>
+              </div>
+              <time class="font-bold ml-5 text-right flex-shrink-0"
+                >28.10.2019<br /><span class="text-body"
+                  >10:30 - 15:30 Uhr</span
+                ></time
+              >
+            </li>
+            <li class="flex justify-between align-center">
+              <div>
+                <h3 class="mb-0">4 – Action!</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+              </div>
+              <time class="font-bold ml-5 text-right flex-shrink-0"
+                >28.10.2019<br /><span class="text-body"
+                  >10:30 - 15:30 Uhr</span
+                ></time
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="about" class="w-full mb-7 mh-80vh flex flex-col">
+        <div class="grid-content-width mx-auto flex-grow flex flex-col">
+          <div class="card bg-accent-gradient flex-1 p-7 w-full mb-7">
+            <h2 class="mb-5">About</h2>
+            <!-- <div class="flex mb-5 mt-5"> -->
+            <div class="ml-4 mr-4">
+              <p class="mb-2">
+                Mit unserem Workshop wollen wir euch einige Aspekte des modernen
+                UI-Designs näherbringen. Im Fokus steht dabei unser Leitspruch
+                »Context is king«. Wir wollen nicht nur theoretische Grundlagen
+                bieten, sondern wir wollen besonders zeigen, wie das Wissen
+                sinnvoll angewendet werden kann und wie wichtig UI Design
+                eigentlich ist. Oh, und natürlich wird das kein
+                Frontalunterricht. Wir wollen das alles mit euch zusammen
+                erarbeiten.
+              </p>
+
+              <h3>Was muss ich beachten?</h3>
+              <p class="mb-2">
+                Der Workshop wird an 4 Terminen im Designlabor der Hochschule
+                Bremerhaven stattfinden. Es sind alle willkommen, allerdings
+                gehen wir von Grundkentnissen im Designbereich aus.<br />
+                Mitzubringen ist nach Möglichkeit ein Laptop, Stift und Papier
+                und natürlich gute Laune. 🚀<br />Interesse?
+                <a href="#anmelden">Dann jetzt gleich anmelden!</a>
+              </p>
+              <h3>Fragen?</h3>
+              <p>
+                Dann schreib einfach an
+                <a href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
+                  >mail@jonaskuske.com
+                </a>
+                und / oder
+                <a href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
+                  >mail@riekehelmers.com</a
+                >.
+              </p>
+            </div>
+          </div>
+          <!-- <div class="card bg-accent-gradient flex-1 p-3 ml-4">
+            </div> -->
+          <!-- </div> -->
+        </div>
+
+        <div class="w-full bg-gradient text-white flex flex-col py-4">
+          <h3 class="mx-auto mb-2">Wer wir sind</h3>
+          <div class="flex grid-max-width mx-auto">
+            <article class="flex items-center mr-2">
+              <img
+                class="round profile-picture mr-1 flex-shrink-0"
+                src="./assets/images/jonas.jpg"
+                alt=""
+              />
+              <p>
+                Jonas (22) ist DMP Student bei Tag und Web Developer bei Nacht.
+                Wenn es um Websites oder Apps geht, kennt er jeden neuen heißen
+                Scheiß. Responsive Design, Accessibility und Animationen sind
+                seine großen Stärken im Bereich UX/UI. Privat ist Jonas übrigens
+                großer Fan von Fortbewegungsmitteln: Fahrräder, Züge, Flugzeuge
+                und Raketen...
+              </p>
+            </article>
+
+            <article class="flex items-center ml-2">
+              <img
+                class="round profile-picture mr-1 flex-shrink-0"
+                src="./assets/images/rieke2.jpg"
+                alt=""
+              />
+              <p>
+                Rieke, 22, ist auch DMP Studentin (Surprise!). Sie kennt die
+                Grundlagen im Web-Developer Bereich und freut sich jedes mal,
+                wenn sie coole neue Sachen im Bereich UI/UX lernt. Besonderen
+                Spaß macht ihr die Arbeit mit Farben und Typografie. Rieke ist
+                außerdem großer Fan von Dingen, die im Weltall rumfliegen:
+                Planeten, Sterne, die ISS und Tesla.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="anmelden"
+        class="w-full text-white mb-5 flex flex-col"
+        style="min-height: 600px"
+      >
+        <div
+          class="w-full flex-grow card bg-primary-gradient grid-content-width mx-auto flex flex-col p-7"
+        >
+          <h2 class="mb-5">Anmeldung</h2>
+          <div class="mr-4 ml-4">
+            <p class="mb-2">
+              Sichere dir jetzt deinen Platz für den Workshop!<br />Damit wir
+              planen können, benötigen wir eine verbindliche Anmeldung.
+            </p>
+
+            <div class="w-full flex flex-grow">
+              <form action="./api/mail.php" method="POST">
+                <div class="input">
+                  <input
+                    type="text"
+                    required
+                    autocomplete="name"
+                    id="name"
+                    name="name"
+                  />
+                  <label for="name">Name</label>
+                </div>
+                <div class="input">
+                  <input type="number" required id="semester" name="semester" />
+                  <label for="semester">Semester</label>
+                </div>
+                <div class="input">
+                  <input
+                    type="email"
+                    required
+                    autocomplete="email"
+                    id="email"
+                    name="email"
+                  />
+                  <label for="email">Mail</label>
+                </div>
+                <button type="submit">Absenden</button>
+              </form>
+
+              <div class="relative flex-grow">
+                <img
+                  src="./assets/images/anmeldung.svg"
+                  alt=""
+                  class="absolute t-0 l-0"
+                  style="left:9rem;top:-5rem;width: 150%;height:150%;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="w-full p-2 flex items-center text-accent grid-max-width mx-auto font-bolder"
+      >
+        <a
+          class="mr-auto mb-0 line-0"
+          href="https://dmp-bremerhaven.de"
+          target="_blank"
+          rel="noopener noreferer"
+        >
+          <svg
+            width="80"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 841.89 595.28"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: var(--accent);
+                }
+              </style>
+            </defs>
+            <path class="cls-1" d="M354.43,383.93h-39.6V215.64h39.6V383.93Z" />
+            <rect
+              class="cls-1"
+              x="401.94"
+              y="215.64"
+              width="39.6"
+              height="168.29"
+            />
+            <rect
+              class="cls-1"
+              x="489.06"
+              y="215.78"
+              width="39.6"
+              height="168.29"
+            />
+            <path
+              class="cls-1"
+              d="M227.71,81V235.13c-15.37-13.28-35.34-23.24-57.24-23.24a87.7,87.7,0,0,0,0,175.39c21.9,0,42.08-10.08,57.45-23.36l-.21,20h39.6V81ZM170.47,351.55a52,52,0,1,1,0-103.93c34.32,0,55.82,23.27,55.82,52S204.54,351.55,170.47,351.55Z"
+            />
+            <path
+              class="cls-1"
+              d="M615.77,514.27V364.39c15.37,13.27,35.35,23.23,57.25,23.23,48.43,0,86.09-39.26,86.09-87.69S721.45,212.24,673,212.24c-21.9,0-42.08,10.08-57.45,23.35l.2-20H576.18V514.27ZM673,248c28.7,0,50.62,20.27,50.62,52,0,28.7-21.92,52-50.62,52-32.72,0-56-23.26-56-52S638.64,248,673,248Z"
+            />
+          </svg>
+        </a>
+
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html" class="ml-1">Datenschutz</a>
+      </footer>
     </main>
   </body>
 </html>

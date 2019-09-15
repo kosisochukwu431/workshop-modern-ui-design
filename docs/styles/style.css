@@ -1,5 +1,15 @@
+:root {
+  --header-height: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
+  --scroll-behavior: smooth;
+  scrollbar-color: var(--primary) var(--accent-o5);
+}
+
 body {
-  padding-top: 65px; /* Header ausgleichen */
+  padding-top: calc(var(--header-height) * 1.3); /* Header ausgleichen */
 }
 
 /* Header/Splashscreen Container */
@@ -8,7 +18,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  z-index: 100;
+  height: var(--header-height);
   transition: height 250ms ease-in-out;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -84,7 +95,7 @@ body {
 
 /* Card */
 .card {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   padding: 20px;
 }
@@ -94,6 +105,7 @@ body {
   background: rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 5px;
+  margin-bottom: 1em;
   position: relative;
 }
 .input input {
@@ -122,6 +134,7 @@ body {
 /* Button */
 button,
 .button {
+  display: inline-block;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: none;
@@ -130,6 +143,11 @@ button,
   text-align: center;
   text-transform: uppercase;
   color: var(--white);
+}
+
+.profile-picture {
+  width: 200px;
+  border: 7px solid var(--accent);
 }
 
 @keyframes spinner {
@@ -148,5 +166,48 @@ button,
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+section[id] {
+  padding-top: calc(var(--header-height) * 1.2);
+  margin-top: calc(-1.2 * var(--header-height));
+}
+
+.has-scrollbar ::-webkit-scrollbar,
+.has-scrollbar::-webkit-scrollbar {
+  background: var(--accent-o5);
+}
+.has-scrollbar ::-webkit-scrollbar-thumb,
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary-o5);
+  border-radius: 6px;
+}
+.has-scrollbar ::-webkit-scrollbar-thumb:hover,
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+@media (min-width: 1450px) {
+  main section:first-child {
+    max-width: 1200px !important;
+  }
+}
+
+@media (max-width: 970px) {
+  header .button {
+    display: none;
+  }
+  .profile-picture {
+    width: 90px;
+    border: 3px solid var(--accent);
+  }
+  #about h3 + div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .card {
+    background: none;
+    box-shadow: none;
   }
 }

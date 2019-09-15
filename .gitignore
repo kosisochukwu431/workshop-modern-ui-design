@@ -4,7 +4,7 @@ Thumbs.db
 hint-report/
 .firebase/
 .cache/
-
+build
 # local env files
 .env.local
 .env.*.local
