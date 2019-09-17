@@ -1,30 +1,10 @@
 {
-  "name": "workshop-modern-ui-design",
+  "name": "landing-page",
   "version": "1.0.0",
-  "description": "The landing page for the design workshop at HS Bremerhaven",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "build": "cross-env NODE_ENV=production postcss styles/tailwind.css -o build/tailwind.css",
-    "start": "postcss styles/tailwind.css -o build/tailwind.css -w"
+    "build": "cross-env NODE_ENV=production postcss styles/index.css -o assets/styles.css",
+    "start": "postcss styles/index.css -o assets/styles.css -w"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jonaskuske/workshop-modern-ui-design.git"
-  },
-  "author": "Jonas Kuske",
-  "license": "",
-  "bugs": {
-    "url": "https://github.com/jonaskuske/workshop-modern-ui-design/issues"
-  },
-  "homepage": "https://github.com/jonaskuske/workshop-modern-ui-design#readme",
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.3.0",
-    "autoprefixer": "^9.6.1",
-    "cross-env": "^5.2.1",
-    "cssnano": "^4.1.10",
-    "postcss-cli": "^6.1.3"
-  },
-  "dependencies": {
-    "tailwindcss": "^1.1.2"
-  }
+  "author": ""
 }
