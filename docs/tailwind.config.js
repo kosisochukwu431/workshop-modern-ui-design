@@ -1,10 +1,12 @@
 module.exports = {
   theme: {
+    container: { padding: "1.5rem" },
     extend: {
       fontFamily: {
         display: ["Quicksand", "sans-serif"],
         body: ["Nunito", "sans-serif"]
       },
+      flexGrow: { full: "9999" },
       colors: {
         white: {
           default: "#fff",

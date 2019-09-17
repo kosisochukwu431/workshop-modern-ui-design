@@ -1,17 +1,7 @@
+import { $, create, detectScrollBar } from "./utils.js";
 import Vivus from "./vivus.js";
 
-/** @type {Document['querySelector']} */
-const $ = (selector, root = document) => root.querySelector(selector);
-
-/**
- * @template {keyof HTMLElementTagNameMap} TagName
- * @param {TagName} tag
- * @param attrs {Partial<HTMLElementTagNameMap[TagName]>}
- * @returns {HTMLElementTagNameMap[TagName]}
- */
-const create = (tag, attrs = {}) => {
-  return Object.assign(document.createElement(tag), attrs);
-};
+detectScrollBar();
 
 /* Smoothscroll-Polyfills laden */
 if (!("scrollBehavior" in create("a").style)) {
@@ -58,28 +48,14 @@ if (splashHeaderContainer.classList.contains("h-full")) {
   animateSplashLogo();
 }
 
-!(function detectScrollBar() {
-  const body = document.body;
-  const el = body.appendChild(create("div"));
-
-  el.style.cssText = `
-  width:100px;height:100px;overflow:scroll !important;position:absolute;top:-100vh`;
-
-  const hasScrollbar = el.offsetWidth - el.clientWidth > 0;
-  if (hasScrollbar) document.documentElement.classList.add("scrollbar");
-
-  body.removeChild(el);
-  return hasScrollbar;
-})();
-
 if (typeof IntersectionObserver !== "undefined") {
   const observedBtn = $(".js-observed-signup");
   const headerBtn = $(".btn-signup");
 
   const observer = new IntersectionObserver(
     ([btn]) => {
-      if (btn.isIntersecting) headerBtn.classList.add("max-w-0");
-      else headerBtn.classList.remove("max-w-0");
+      if (btn.isIntersecting) headerBtn.classList.remove("lg:max-w-full");
+      else headerBtn.classList.add("lg:max-w-full");
     },
     { rootMargin: "-64px 0px 0px" }
   );

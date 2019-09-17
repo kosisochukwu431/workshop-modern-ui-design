@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Impressum | Modern UI Design</title>
+
     <!-- TODO: REMOVE BEFORE GOING LIVE! -->
     <meta name="robots" content="noindex,nofollow" />
 
@@ -43,16 +44,20 @@
     <meta name="theme-color" content="#a11cf2" />
 
     <link rel="stylesheet" href="./assets/styles.css" />
+    <script type="module">
+      import { detectScrollBar } from "./assets/js/utils.js";
+      detectScrollBar();
+    </script>
   </head>
 
   <body
     class="flex flex-col items-start font-light bg-primary text-white min-h-full"
   >
     <div
-      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary shadow-xl"
+      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary lg:bg-gradient text-white shadow-xl"
     >
       <header
-        class="header visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
+        class="header container visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
       >
         <a
           href="./#start"
@@ -63,7 +68,7 @@
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 547.95 350.29"
             aria-labelledby="logoTitle"
-            class="w-16 text-white"
+            class="w-12 lg:w-16 text-white"
           >
             <title id="logoTitle">Modern UI Design Logo</title>
             <defs>
@@ -90,18 +95,20 @@
         <a href="./#start" class="font-display font-medium ml-4">Start</a>
         <a href="./#termine" class="font-display font-medium ml-4">Termine</a>
         <a href="./#about" class="font-display font-medium ml-4">About</a>
-        <a
-          href="./#anmelden"
-          class="button text-white ml-4 bg-black-30 focus:bg-white-70 outline-none focus:text-black-70"
-        >
-          Anmelden
-        </a>
+        <div class="btn-signup max-w-0 lg:max-w-full">
+          <a
+            href="./#anmelden"
+            class="ml-4 button text-white bg-black-30 focus:bg-white-30 outline-none focus:text-black-70"
+          >
+            Anmelden
+          </a>
+        </div>
       </header>
     </div>
 
-    <main class="max-w-4xl mx-auto p-32">
+    <main class="container mx-auto pt-24 lg:p-32 mb-16 lg:mb-20">
       <h1 class="mb-12">Impressum</h1>
-      <div class="mx-10">
+      <div class="lg:mx-10">
         <h2 class="mb-2">Angaben gemäß §5 TMG</h2>
         <p class="mb-4">
           Jonas Kuske<br />
@@ -172,10 +179,10 @@
     </main>
 
     <footer
-      class="w-full pb-8 flex items-center text-white max-w-4xl xl:max-w-6xl mx-auto font-normal"
+      class="container pb-4 flex items-center text-white max-w-4xl xl:max-w-6xl mx-auto font-normal"
     >
       <a
-        class="mr-auto mb-0 outline-none border-t-2 border-b-2 border-transparent focus:border-white"
+        class="mr-auto mb-0 outline-none border-t-2 border-b-2 border-transparent focus:border-accent"
         href="https://dmp-bremerhaven.de"
         rel="noopener noreferer"
       >

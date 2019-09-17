@@ -4,6 +4,7 @@ html {
   scroll-behavior: smooth;
   --scroll-behavior: smooth;
   scrollbar-color: theme("colors.primary.default") theme("colors.accent.50");
+  scrollbar-width: thin;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
@@ -33,7 +34,7 @@ a:focus {
 
 .scrollbar ::-webkit-scrollbar,
 .scrollbar::-webkit-scrollbar {
-  @apply bg-accent-50;
+  @apply bg-accent-50 w-2;
 }
 .scrollbar ::-webkit-scrollbar-thumb,
 .scrollbar::-webkit-scrollbar-thumb {

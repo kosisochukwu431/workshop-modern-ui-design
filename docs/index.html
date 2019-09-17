@@ -48,9 +48,11 @@
     <script type="module" src="./assets/js/main.js"></script>
   </head>
 
-  <body class="flex flex-col items-start font-light min-h-full">
+  <body
+    class="flex flex-col items-start font-light text-white lg:text-black min-h-full bg-primary lg:bg-transparent"
+  >
     <div
-      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-gradient text-white shadow-xl"
+      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary lg:bg-gradient text-white shadow-xl"
     >
       <script>
         if (!window.location.hash) {
@@ -59,7 +61,7 @@
         }
       </script>
       <header
-        class="header visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
+        class="header container visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
       >
         <a
           href="#start"
@@ -70,7 +72,7 @@
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 547.95 350.29"
             aria-labelledby="logoTitle"
-            class="w-16 text-white"
+            class="w-12 lg:w-16 text-white"
           >
             <title id="logoTitle">Modern UI Design Logo</title>
             <defs>
@@ -97,10 +99,10 @@
         <a href="#start" class="font-display font-medium ml-4">Start</a>
         <a href="#termine" class="font-display font-medium ml-4">Termine</a>
         <a href="#about" class="font-display font-medium ml-4">About</a>
-        <div class="btn-signup ml-4 max-w-0">
+        <div class="btn-signup max-w-0 lg:max-w-full">
           <a
             href="#anmelden"
-            class="button text-white bg-black-30 focus:bg-white-30 outline-none focus:text-black-70"
+            class="m-1 ml-4 button text-white bg-black-30 focus:bg-black-50 hover:bg-black-50 outline-none focus:shadow-outline"
           >
             Anmelden
           </a>
@@ -112,7 +114,7 @@
       >
         <div class="my-auto">
           <svg
-            class="inline mb-8 max-w-sm"
+            class="inline mb-8 max-w-xs lg:max-w-sm"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 687.69 454.8"
             aria-hidden="true"
@@ -140,7 +142,7 @@
             />
           </svg>
 
-          <h1 class="text-5xl opacity-0">Modern UI Design</h1>
+          <h1 class="text-2xl lg:text-5xl opacity-0">Modern UI Design</h1>
         </div>
 
         <div
@@ -155,21 +157,25 @@
     <main class="w-full flex-grow flex flex-col items-center">
       <section
         id="start"
-        class="w-full min-h-screen mb-20 max-w-4xl xxl:max-w-6xl flex justify-between items-center -mt-10"
+        class="container min-h-screen mb-10 pt-16 flex flex-col justify-center items-center lg:pt-0 lg:flex-row lg:justify-start lg:mb-20 lg:-mt-10 lg:max-w-4xl xxl:max-w-6xl"
       >
-        <img class="w-1/2" src="./assets/images/drag.svg" alt="" />
+        <img
+          class="w-full max-w-lg mt-6 mb-3 lg:w-1/2 lg:max-w-full lg:my-0"
+          src="./assets/images/drag.svg"
+          alt="Illustration, die eine Hand zeigt, die auf einem abstrakten Smartphone-Interface Karten durch die Gegend schiebt"
+        />
         <div
-          class="absolute top-0 right-0 left-0 h-full w-full max-w-4xl mx-auto"
+          class="w-full mt-3 mb-6 lg:my-0 lg:absolute top-0 h-full right-0 left-0 mx-auto max-w-4xl"
         >
           <div
-            class="absolute top-1/2 -translate-y-1/2 left-1/2 ml-20 p-8 -mt-6 rounded-xl shadow-md bg-accent-gradient"
+            class="lg:absolute top-1/2 lg:-translate-y-1/2 left-1/2 lg:mr-6 xxl:mr-0 lg:ml-20 lg:p-8 lg:-mt-6 lg:rounded-xl lg:shadow-md lg:bg-accent-gradient"
           >
             <p class="mb-2">
               Was ist UX-/UI Design? Wo liegt der Unterschied zwischen UX und
               UI? Warum brauchen wir das? Wie gestaltet man gute Interfaces? Und
               vor allem:
-              <span class="font-medium"
-                >wie wendet man das alles sinnvoll an?
+              <span class="font-medium">
+                wie wendet man das alles sinnvoll an?
               </span>
             </p>
             <p class="mb-6">
@@ -179,7 +185,7 @@
             <div class="text-center">
               <a
                 href="#anmelden"
-                class="js-observed-signup button text-white bg-black-30  focus:bg-white-30 outline-none focus:text-black-70"
+                class="js-observed-signup button text-white bg-black-30 focus:bg-black-50 hover:bg-black-50 outline-none focus:shadow-outline"
               >
                 Anmelden
               </a>
@@ -190,60 +196,86 @@
 
       <section
         id="termine"
-        class="w-full mb-40 max-w-4xl text-white -mt-64 pt-24"
+        class="container pt-20 -mt-20 mb-16 max-w-4xl text-white lg:mb-40 lg:-mt-64 lg:pt-24"
       >
-        <div class="rounded-xl shadow-md bg-primary-gradient w-full p-20">
-          <h2 class="mb-12">Termine</h2>
-          <ol class="m-0 p-0 mx-10 mb-3">
-            <li class="flex justify-between align-center mb-12">
-              <div>
+        <div
+          class="w-full lg:rounded-xl lg:shadow-md lg:bg-primary-gradient lg:p-20"
+        >
+          <h2 class="mb-8 lg:mb-12">Termine</h2>
+
+          <ol class="m-0 p-0 lg:mx-10 mb-3">
+            <li
+              class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start"
+            >
+              <div class="flex-grow-full m-2">
                 <h3 class="mb-0">1 – Flowing through the process</h3>
-                <p>Designprozess – warum, was, wie und wie nicht?</p>
+                <p>
+                  Designprozess – warum, was, wie und wie nicht? Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit.
+                </p>
               </div>
-              <time class="font-bold ml-20 text-right flex-shrink-0">
-                28.10.2019<br />
-                <span class="font-light">
+              <time
+                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+              >
+                28.10.2019<br class="hidden lg:inline" />
+                <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
               </time>
             </li>
-            <li class="flex justify-between align-center mb-12">
-              <div>
+            <li
+              class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start"
+            >
+              <div class="flex-grow-full m-2">
                 <h3 class="mb-0">2 – Make it pretty, make it work</h3>
                 <p>
-                  Usability-Patterns, Farben, Typografie – Tipps zum Gestalten
+                  Usability-Patterns, Farben, Typografie, Animationen –
+                  Design-Tipps und wichtiges Basiswissen
                 </p>
               </div>
-              <time class="font-bold ml-20 text-right flex-shrink-0">
-                28.10.2019<br />
-                <span class="font-light">
+              <time
+                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+              >
+                28.10.2019<br class="hidden lg:inline" />
+                <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
               </time>
             </li>
-            <li class="flex justify-between align-center mb-12">
-              <div>
+            <li
+              class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start"
+            >
+              <div class="flex-grow-full m-2">
                 <h3 class="mb-0">3 – Design for everyone</h3>
                 <p>
-                  Von Smartwatch bis TV und Tastatur bis Screenreader: wie man
-                  Interfaces baut, die in jeder Situation funktionieren
+                  Von Smartwatch bis TV und Tastatur bis Screenreader:
+                  Interfaces bauen, die in jeder Situation funktionieren
                 </p>
               </div>
-              <time class="font-bold ml-20 text-right flex-shrink-0">
-                28.10.2019<br />
-                <span class="font-light">
+              <time
+                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+              >
+                28.10.2019<br class="hidden lg:inline" />
+                <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
               </time>
             </li>
-            <li class="flex justify-between align-center">
-              <div>
+            <li
+              class="flex flex-wrap items-center leading-relaxed -m-2 md:flex-no-wrap lg:items-start"
+            >
+              <div class="flex-grow-full m-2">
                 <h3 class="mb-0">4 – Action!</h3>
-                <p>Lorem ipsum dolor sit amet</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Inventore ad, quos quaerat repellendus in!
+                </p>
               </div>
-              <time class="font-bold ml-20 text-right flex-shrink-0">
-                28.10.2019<br />
-                <span class="font-light">
+              <time
+                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+              >
+                28.10.2019<br class="hidden lg:inline" />
+                <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
               </time>
@@ -252,63 +284,76 @@
         </div>
       </section>
 
-      <section id="about" class="w-full mb-40 flex flex-col -mt-24 pt-24">
-        <div class="max-w-4xl mx-auto flex-grow flex flex-col">
-          <div
-            class="rounded-xl shadow-md bg-accent-gradient p-20 w-full mb-32"
-          >
-            <h2 class="mb-12">About</h2>
-            <div class="mx-10">
-              <p class="mb-5">
-                Mit unserem Workshop wollen wir euch einige Aspekte des modernen
-                UI-Designs näherbringen. Im Fokus steht dabei unser Leitspruch
-                »Context is king«. Wir wollen nicht nur theoretische Grundlagen
-                bieten, sondern wir wollen besonders zeigen, wie das Wissen
-                sinnvoll angewendet werden kann und wie wichtig UI Design
-                eigentlich ist. Oh, und natürlich wird das kein
-                Frontalunterricht. Wir wollen das alles mit euch zusammen
-                erarbeiten.
-              </p>
+      <section
+        id="about"
+        class="container max-w-4xl pt-24 -mt-24 mb-16 flex flex-col lg:mb-40"
+      >
+        <div
+          class="w-full lg:rounded-xl lg:shadow-md lg:bg-accent-gradient lg:p-20"
+        >
+          <h2 class="mb-8 lg:mb-12">About</h2>
 
-              <h3 class="mb-5">Was muss ich beachten?</h3>
-              <p class="mb-5">
-                Der Workshop wird an 4 Terminen im Designlabor der Hochschule
-                Bremerhaven stattfinden. Es sind alle willkommen, allerdings
-                gehen wir von Grundkentnissen im Designbereich aus.<br />
-                Mitzubringen ist nach Möglichkeit ein Laptop, Stift und Papier
-                und natürlich gute Laune. 🚀<br />Interesse?
-                <a href="#anmelden">Dann jetzt gleich anmelden!</a>
-              </p>
-              <h3 class="mb-5">Fragen?</h3>
-              <p class="mb-3">
-                Dann schreib einfach an
-                <a
-                  class="text-primary"
-                  href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
-                >
-                  mail@jonaskuske.com
-                </a>
-                und / oder
-                <a
-                  class="text-primary"
-                  href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
-                >
-                  mail@riekehelmers.com</a
-                >.
-              </p>
-            </div>
+          <div class="lg:mx-10">
+            <p class="mb-6">
+              Mit unserem Workshop wollen wir euch einige Aspekte des modernen
+              UI-Designs näherbringen. Im Fokus steht dabei unser Leitspruch
+              »Context is king«. Wir wollen nicht nur theoretische Grundlagen
+              bieten, sondern wir wollen besonders zeigen, wie das Wissen
+              sinnvoll angewendet werden kann und wie wichtig UI Design
+              eigentlich ist. Oh, und natürlich wird das kein Frontalunterricht.
+              Wir wollen das alles mit euch zusammen erarbeiten.
+            </p>
+
+            <h3 class="mb-6">Was muss ich beachten?</h3>
+            <p class="mb-6">
+              Der Workshop wird an 4 Terminen im Designlabor der Hochschule
+              Bremerhaven stattfinden. Es sind alle willkommen, allerdings gehen
+              wir von Grundkentnissen im Designbereich aus.<br />
+              Mitzubringen ist nach Möglichkeit ein Laptop, Stift und Papier und
+              natürlich gute Laune. 🚀<br />Interesse?
+              <a href="#anmelden">Dann jetzt gleich anmelden!</a>
+            </p>
+            <h3 class="mb-6">Fragen?</h3>
+            <p>
+              Dann schreib einfach an
+              <a
+                class="text-accent lg:text-primary font-bold"
+                href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
+              >
+                mail@jonaskuske.com
+              </a>
+              und / oder
+              <a
+                class="text-accent lg:text-primary font-bold"
+                href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
+              >
+                mail@riekehelmers.com</a
+              >.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="w-full bg-gradient text-white flex flex-col py-10">
-          <h3 class="mx-auto mb-5">Wer wir sind</h3>
-          <div class="flex xl:max-w-6xl xxl:max-w-7xl mx-auto">
-            <article class="flex items-center mx-5">
-              <img
-                class="w-48 flex-shrink-0 rounded-full mr-4 border-4 border-accent shadow-inner"
-                src="./assets/images/jonas.jpg"
-                alt=""
-              />
+      <section id="wir" class="w-full text-white pt-24 -mt-24 mb-16 lg:mb-40">
+        <div class="w-full bg-gradient shadow-inner py-16 lg:py-20">
+          <h3 class="text-center mb-8 lg:mb-12">Wer wir sind</h3>
+
+          <div
+            class="container mx-auto flex flex-col lg:flex-row xl:max-w-6xl xxl:max-w-7xl"
+          >
+            <article
+              class="flex flex-col lg:flex-row items-center mb-12 lg:mb-0 lg:mr-2 xl:mr-6"
+            >
+              <a
+                href="https://jonaskuske.com?lang=de"
+                class="mb-6 flex-shrink-0 rounded-full p-1 border-4 border-dotted border-transparent hover:border-accent focus:border-accent lg:mb-0 lg:mr-4"
+              >
+                <img
+                  class="w-48 h-48 rounded-full shadow-inner"
+                  src="./assets/images/jonas.jpg"
+                  alt=""
+                />
+              </a>
               <p>
                 Jonas (22) ist DMP Student bei Tag und Web Developer bei Nacht.
                 Wenn es um Websites oder Apps geht, kennt er jeden neuen heißen
@@ -319,12 +364,19 @@
               </p>
             </article>
 
-            <article class="flex items-center mx-5">
-              <img
-                class="w-48 flex-shrink-0 rounded-full mr-4 border-4 border-accent shadow-inner"
-                src="./assets/images/rieke.jpg"
-                alt=""
-              />
+            <article
+              class="flex flex-col lg:flex-row items-center lg:ml-2 xl:ml-6"
+            >
+              <a
+                href="https://riekehelmers.com"
+                class="mb-6 flex-shrink-0 rounded-full p-1 border-4 border-dotted border-transparent hover:border-accent focus:border-accent lg:mb-0 lg:mr-4"
+              >
+                <img
+                  class="w-48 h-48 rounded-full shadow-inner"
+                  src="./assets/images/rieke.jpg"
+                  alt=""
+                />
+              </a>
               <p>
                 Rieke, 22, ist auch DMP Studentin (Surprise!). Sie kennt die
                 Grundlagen im Web-Developer Bereich und freut sich jedes mal,
@@ -340,20 +392,25 @@
 
       <section
         id="anmelden"
-        class="w-full text-white mb-24 flex flex-col min-h-160 -mt-24 pt-24"
+        class="container max-w-4xl pt-20 -mt-20 mb-32 flex text-white lg:min-h-160 lg:mb-40"
       >
         <div
-          class="w-full flex-grow rounded-xl shadow-md bg-primary-gradient max-w-4xl mx-auto flex flex-col p-20"
+          class="w-full flex-grow lg:rounded-xl lg:shadow-md lg:bg-primary-gradient flex flex-col lg:p-20"
         >
-          <h2 class="mb-12">Anmeldung</h2>
-          <div class="mx-10">
+          <h2 class="mb-8 lg:mb-12">Anmeldung</h2>
+          <div class="lg:mx-10">
             <p class="mb-2">
-              Sichere dir jetzt deinen Platz für den Workshop!<br />Damit wir
-              planen können, benötigen wir eine verbindliche Anmeldung.
+              Sichere dir jetzt deinen Platz für den Workshop!<br />
+              Damit wir planen können, benötigen wir eine verbindliche
+              Anmeldung.
             </p>
 
-            <div class="w-full flex flex-grow">
-              <form action="./api/mail.php" method="POST">
+            <div class="relative w-full flex-grow flex flex-col lg:flex-row">
+              <form
+                action="http://mui.riekehelmers.com/api/mail.php"
+                method="POST"
+                class="w-56 lg:w-auto"
+              >
                 <div class="field mb-1">
                   <input
                     type="text"
@@ -397,12 +454,11 @@
                 </button>
               </form>
 
-              <div class="relative flex-grow">
+              <div class="w-full pb-32 lg:flex-grow lg:relative">
                 <img
                   src="./assets/images/anmeldung.svg"
                   alt=""
-                  class="absolute top-0 left-0"
-                  style="left:5rem;top:-2rem;width:130%;height:130%;"
+                  class="absolute w-4/6 max-w-sm right-0 -bottom-1/10 lg:w-auto lg:max-w-full lg:-top-8 lg:right-auto lg:bottom-auto lg:left-20"
                 />
               </div>
             </div>
@@ -411,7 +467,7 @@
       </section>
 
       <footer
-        class="w-full pb-4 flex items-center text-accent max-w-4xl xl:max-w-6xl mx-auto font-normal hover:text-primary focus-within:text-primary"
+        class="container pb-4 flex items-center text-accent max-w-4xl xl:max-w-6xl mx-auto font-normal lg:hover:text-primary lg:focus-within:text-primary"
       >
         <a
           class="mr-auto mb-0 outline-none border-t-2 border-b-2 border-transparent focus:border-accent"
