@@ -66,7 +66,7 @@ if (splashHeaderContainer.classList.contains("h-full")) {
   width:100px;height:100px;overflow:scroll !important;position:absolute;top:-100vh`;
 
   const hasScrollbar = el.offsetWidth - el.clientWidth > 0;
-  if (hasScrollbar) body.classList.add("scrollbar");
+  if (hasScrollbar) document.documentElement.classList.add("scrollbar");
 
   body.removeChild(el);
   return hasScrollbar;
