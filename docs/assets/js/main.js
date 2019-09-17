@@ -13,10 +13,7 @@ const create = (tag, attrs = {}) => {
   return Object.assign(document.createElement(tag), attrs);
 };
 
-const header = $(".header");
-const splash = $(".splash");
-const splashLogo = $(".splash__logo", splash);
-
+/* Smoothscroll-Polyfills laden */
 if (!("scrollBehavior" in create("a").style)) {
   const smoothscrollPolyfill = create("script", {
     src: "https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js",
@@ -30,40 +27,62 @@ if (!("scrollBehavior" in create("a").style)) {
   document.head.append(smoothscrollPolyfill, smoothscrollAnchorPolyfill);
 }
 
-if ($(".header--splash")) {
+const splashHeaderContainer = $(".splash-header-container");
+
+function animateSplashLogo() {
+  document.body.classList.add("overflow-hidden");
+  const splash = $(".splash", splashHeaderContainer);
+  const splashLogo = $("svg", splash);
+
   new Vivus(
     splashLogo,
     {
       type: "oneByOne",
       duration: 110,
       pathTimingFunction: Vivus.EASE_OUT_BOUNCE,
-      onReady: () => (
-        splash.classList.add("splash--anim-start"),
-        document.body.classList.add("overflow-hidden")
-      )
+      onReady: () => {
+        setTimeout(() => splashLogo.classList.add("show-dot"), 1250);
+      }
     },
     () => {
-      splash.classList.add("splash--anim-complete");
+      splash.classList.add("splash--visible");
       setTimeout(() => {
         document.body.classList.remove("overflow-hidden");
-        header.classList.remove("header--splash");
-      }, 500);
+        splashHeaderContainer.classList.remove("h-full");
+      }, 700);
     }
   );
 }
 
-const detectScrollBar = () => {
+if (splashHeaderContainer.classList.contains("h-full")) {
+  animateSplashLogo();
+}
+
+!(function detectScrollBar() {
   const body = document.body;
-  const el = body.appendChild(document.createElement("div"));
+  const el = body.appendChild(create("div"));
 
   el.style.cssText = `
   width:100px;height:100px;overflow:scroll !important;position:absolute;top:-100vh`;
 
   const hasScrollbar = el.offsetWidth - el.clientWidth > 0;
-  if (hasScrollbar) body.classList.add("has-scrollbar");
+  if (hasScrollbar) body.classList.add("scrollbar");
 
   body.removeChild(el);
   return hasScrollbar;
-};
+})();
 
-detectScrollBar();
+if (typeof IntersectionObserver !== "undefined") {
+  const observedBtn = $(".js-observed-signup");
+  const headerBtn = $(".btn-signup");
+
+  const observer = new IntersectionObserver(
+    ([btn]) => {
+      if (btn.isIntersecting) headerBtn.classList.add("max-w-0");
+      else headerBtn.classList.remove("max-w-0");
+    },
+    { rootMargin: "-64px 0px 0px" }
+  );
+
+  observer.observe(observedBtn);
+}

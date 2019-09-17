@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="h-100 antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Modern UI Design</title>
+
     <!-- TODO: REMOVE BEFORE GOING LIVE! -->
     <meta name="robots" content="noindex,nofollow" />
 
@@ -43,166 +44,184 @@
     />
     <meta name="theme-color" content="#a11cf2" />
 
-    <link rel="stylesheet" href="./assets/fonts/index.css" />
-    <!-- <link rel="stylesheet" href="build/tailwind.css" /> -->
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/utilities.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
     <script type="module" src="./assets/js/main.js"></script>
   </head>
 
-  <body class="flex flex-col items-start text-body">
-    <!-- Header / Splashscreen -->
-    <div class="header flex bg-gradient text-white">
+  <body class="flex flex-col items-start font-light min-h-full">
+    <div
+      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-gradient text-white shadow-xl"
+    >
       <script>
         if (!window.location.hash) {
-          document.querySelector(".header").classList.add("header--splash");
+          const container = document.querySelector(".splash-header-container");
+          container.classList.add("h-full");
         }
       </script>
-
-      <!-- Header -->
       <header
-        class="header__inner flex items-center w-full grid-content-width mx-auto"
+        class="header visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
       >
-        <a href="#start" class="mr-auto line-0">
+        <a
+          href="#start"
+          class="mr-auto outline-none p-1 border-t-2 border-b-2 border-transparent focus:border-white"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 547.95 350.29"
-            width="70"
             aria-labelledby="logoTitle"
+            class="w-16 text-white"
           >
             <title id="logoTitle">Modern UI Design Logo</title>
             <defs>
               <style>
                 .line {
                   fill: none;
-                  stroke: #fff;
                   stroke-linecap: round;
                   stroke-linejoin: round;
                   stroke-width: 39.69px;
                 }
-                .dot {
-                  fill: #fff;
-                }
               </style>
             </defs>
             <path
-              class="line"
+              class="line stroke-current"
               d="M19.84,283.07l0-262.4,120.5,176.26L263,19.84l0,211s0,99.61,96.92,99.61c98,0,98-99.61,98-99.61V60"
             />
             <path
-              class="dot"
+              class="fill-current"
               d="M506.71,82.37q-5.41-4.53-5.4-14.46V61q0-10.37,5.83-14.68T525.06,42q12.09,0,17.49,4.54T548,61v6.92q0,10.35-5.61,14.68t-17.71,4.32Q512.11,86.91,506.71,82.37Z"
             />
           </svg>
         </a>
 
-        <a href="#start">Start</a>
-        <a href="#termine">Termine</a>
-        <a href="#about">About</a>
-        <a href="#anmelden" class="button">Anmelden</a>
+        <a href="#start" class="font-display font-medium ml-4">Start</a>
+        <a href="#termine" class="font-display font-medium ml-4">Termine</a>
+        <a href="#about" class="font-display font-medium ml-4">About</a>
+        <div class="btn-signup ml-4 max-w-0">
+          <a
+            href="#anmelden"
+            class="button text-white bg-black-30 focus:bg-white-30 outline-none focus:text-black-70"
+          >
+            Anmelden
+          </a>
+        </div>
       </header>
 
-      <!-- Splash -->
-      <div class="splash flex flex-col items-center text-center">
+      <div
+        class="splash absolute top-0 left-0 w-full h-full invisible opacity-0 flex flex-col items-center text-center"
+      >
         <div class="my-auto">
           <svg
-            id="splash__logo"
-            class="splash__logo"
+            class="inline mb-8 max-w-sm"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 687.69 454.8"
             aria-hidden="true"
           >
             <defs>
               <style>
-                .splash__logo__line {
+                .line {
                   fill: none;
-                  stroke: #fff;
                   stroke-linecap: round;
                   stroke-linejoin: round;
                   stroke-width: 39.69px;
                 }
-                .splash__logo__dot {
-                  fill: #fff;
+                .dot {
+                  transform-origin: 572.32px 120px;
                 }
               </style>
             </defs>
             <path
-              class="splash__logo__line"
+              class="line stroke-current"
               d="M85.46,335.33l0-262.41L206,249.18,328.64,72.1l0,211s0,99.61,96.92,99.61c98,0,98-99.61,98-99.61V112.24"
             />
             <path
-              class="splash__logo__dot"
+              class="dot fill-current opacity-0"
               d="M572.32,134.63q-5.4-4.55-5.39-14.47v-6.91q0-10.36,5.83-14.69t17.92-4.32q12.09,0,17.49,4.54t5.4,14.47v6.91q0,10.36-5.62,14.68t-17.7,4.32Q577.71,139.16,572.32,134.63Z"
             />
           </svg>
-          <h1 class="text-display mt-0">Modern UI Design</h1>
+
+          <h1 class="text-5xl opacity-0">Modern UI Design</h1>
         </div>
 
-        <div class="spinner" role="status">
+        <div
+          class="inline-block w-12 h-12 rounded-full bg-white pulse mb-16"
+          role="status"
+        >
           <span class="sr-only">Wird geladen...</span>
         </div>
       </div>
     </div>
 
-    <!-- Content -->
     <main class="w-full flex-grow flex flex-col items-center">
       <section
         id="start"
-        class="w-full mh-80vh mb-5 grid-content-width flex justify-between items-center"
+        class="w-full min-h-screen mb-20 max-w-4xl xxl:max-w-6xl flex justify-between items-center -mt-10"
       >
-        <img class="w-50" src="./assets/images/drag.svg" alt="" />
+        <img class="w-1/2" src="./assets/images/drag.svg" alt="" />
         <div
-          class="w-full grid-content-width absolute t-0 h-100 l-50 transform-l-n50"
+          class="absolute top-0 right-0 left-0 h-full w-full max-w-4xl mx-auto"
         >
           <div
-            class="card bg-accent-gradient absolute t-50 transform-t-n50 l-50 ml-5 p-3"
-            style="margin-left: 8rem"
+            class="absolute top-1/2 -translate-y-1/2 left-1/2 ml-20 p-8 -mt-6 rounded-xl shadow-md bg-accent-gradient"
           >
             <p class="mb-2">
-              Was ist UX-/UI Design? Wo ist der Unterschied zwischen UX und UI?
-              Warum brauchen wir das? Wie gestaltet man gute Interfaces? Und vor
-              allem: wie wendet man das alles sinnvoll an? Diese Fragen und mehr
-              klären wir in unserem 4-teiligen Workshop zum Thema Modern UI
-              Design. Seid dabei und meldet euch jetzt an!
+              Was ist UX-/UI Design? Wo liegt der Unterschied zwischen UX und
+              UI? Warum brauchen wir das? Wie gestaltet man gute Interfaces? Und
+              vor allem:
+              <span class="font-medium"
+                >wie wendet man das alles sinnvoll an?
+              </span>
+            </p>
+            <p class="mb-6">
+              Diese Fragen und mehr klären wir in unserem 4-teiligen Workshop
+              zum Thema Modern UI Design. Seid dabei und meldet euch jetzt an!
             </p>
             <div class="text-center">
-              <a href="#anmelden" class="button">Anmelden</a>
+              <a
+                href="#anmelden"
+                class="js-observed-signup button text-white bg-black-30  focus:bg-white-30 outline-none focus:text-black-70"
+              >
+                Anmelden
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="w-full mb-5 grid-content-width text-white" id="termine">
-        <div class="card bg-primary-gradient w-full p-7">
-          <h2 class="mb-5">Termine</h2>
-          <ol class="m-0 p-0 mx-5">
-            <li class="flex justify-between align-center mb-3">
+      <section
+        id="termine"
+        class="w-full mb-40 max-w-4xl text-white -mt-64 pt-24"
+      >
+        <div class="rounded-xl shadow-md bg-primary-gradient w-full p-20">
+          <h2 class="mb-12">Termine</h2>
+          <ol class="m-0 p-0 mx-10 mb-3">
+            <li class="flex justify-between align-center mb-12">
               <div>
                 <h3 class="mb-0">1 – Flowing through the process</h3>
                 <p>Designprozess – warum, was, wie und wie nicht?</p>
               </div>
-              <time class="font-bold ml-5 text-right flex-shrink-0"
-                >28.10.2019<br /><span class="text-body"
-                  >10:30 - 15:30 Uhr</span
-                ></time
-              >
+              <time class="font-bold ml-20 text-right flex-shrink-0">
+                28.10.2019<br />
+                <span class="font-light">
+                  10:30 - 15:30 Uhr
+                </span>
+              </time>
             </li>
-            <li class="flex justify-between align-center mb-3">
+            <li class="flex justify-between align-center mb-12">
               <div>
                 <h3 class="mb-0">2 – Make it pretty, make it work</h3>
                 <p>
                   Usability-Patterns, Farben, Typografie – Tipps zum Gestalten
                 </p>
               </div>
-              <time class="font-bold ml-5 text-right flex-shrink-0"
-                >28.10.2019<br /><span class="text-body"
-                  >10:30 - 15:30 Uhr</span
-                ></time
-              >
+              <time class="font-bold ml-20 text-right flex-shrink-0">
+                28.10.2019<br />
+                <span class="font-light">
+                  10:30 - 15:30 Uhr
+                </span>
+              </time>
             </li>
-            <li class="flex justify-between align-center mb-3">
+            <li class="flex justify-between align-center mb-12">
               <div>
                 <h3 class="mb-0">3 – Design for everyone</h3>
                 <p>
@@ -210,34 +229,37 @@
                   Interfaces baut, die in jeder Situation funktionieren
                 </p>
               </div>
-              <time class="font-bold ml-5 text-right flex-shrink-0"
-                >28.10.2019<br /><span class="text-body"
-                  >10:30 - 15:30 Uhr</span
-                ></time
-              >
+              <time class="font-bold ml-20 text-right flex-shrink-0">
+                28.10.2019<br />
+                <span class="font-light">
+                  10:30 - 15:30 Uhr
+                </span>
+              </time>
             </li>
             <li class="flex justify-between align-center">
               <div>
                 <h3 class="mb-0">4 – Action!</h3>
                 <p>Lorem ipsum dolor sit amet</p>
               </div>
-              <time class="font-bold ml-5 text-right flex-shrink-0"
-                >28.10.2019<br /><span class="text-body"
-                  >10:30 - 15:30 Uhr</span
-                ></time
-              >
+              <time class="font-bold ml-20 text-right flex-shrink-0">
+                28.10.2019<br />
+                <span class="font-light">
+                  10:30 - 15:30 Uhr
+                </span>
+              </time>
             </li>
           </ol>
         </div>
       </section>
 
-      <section id="about" class="w-full mb-7 mh-80vh flex flex-col">
-        <div class="grid-content-width mx-auto flex-grow flex flex-col">
-          <div class="card bg-accent-gradient flex-1 p-7 w-full mb-7">
-            <h2 class="mb-5">About</h2>
-            <!-- <div class="flex mb-5 mt-5"> -->
-            <div class="ml-4 mr-4">
-              <p class="mb-2">
+      <section id="about" class="w-full mb-40 flex flex-col -mt-24 pt-24">
+        <div class="max-w-4xl mx-auto flex-grow flex flex-col">
+          <div
+            class="rounded-xl shadow-md bg-accent-gradient p-20 w-full mb-32"
+          >
+            <h2 class="mb-12">About</h2>
+            <div class="mx-10">
+              <p class="mb-5">
                 Mit unserem Workshop wollen wir euch einige Aspekte des modernen
                 UI-Designs näherbringen. Im Fokus steht dabei unser Leitspruch
                 »Context is king«. Wir wollen nicht nur theoretische Grundlagen
@@ -248,8 +270,8 @@
                 erarbeiten.
               </p>
 
-              <h3>Was muss ich beachten?</h3>
-              <p class="mb-2">
+              <h3 class="mb-5">Was muss ich beachten?</h3>
+              <p class="mb-5">
                 Der Workshop wird an 4 Terminen im Designlabor der Hochschule
                 Bremerhaven stattfinden. Es sind alle willkommen, allerdings
                 gehen wir von Grundkentnissen im Designbereich aus.<br />
@@ -257,30 +279,33 @@
                 und natürlich gute Laune. 🚀<br />Interesse?
                 <a href="#anmelden">Dann jetzt gleich anmelden!</a>
               </p>
-              <h3>Fragen?</h3>
-              <p>
+              <h3 class="mb-5">Fragen?</h3>
+              <p class="mb-3">
                 Dann schreib einfach an
-                <a href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
-                  >mail@jonaskuske.com
+                <a
+                  class="text-primary"
+                  href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
+                >
+                  mail@jonaskuske.com
                 </a>
                 und / oder
-                <a href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
-                  >mail@riekehelmers.com</a
+                <a
+                  class="text-primary"
+                  href="mailto:mail@jonaskuske.com,mail@riekehelmers.com"
+                >
+                  mail@riekehelmers.com</a
                 >.
               </p>
             </div>
           </div>
-          <!-- <div class="card bg-accent-gradient flex-1 p-3 ml-4">
-            </div> -->
-          <!-- </div> -->
         </div>
 
-        <div class="w-full bg-gradient text-white flex flex-col py-4">
-          <h3 class="mx-auto mb-2">Wer wir sind</h3>
-          <div class="flex grid-max-width mx-auto">
-            <article class="flex items-center mr-2">
+        <div class="w-full bg-gradient text-white flex flex-col py-10">
+          <h3 class="mx-auto mb-5">Wer wir sind</h3>
+          <div class="flex xl:max-w-6xl xxl:max-w-7xl mx-auto">
+            <article class="flex items-center mx-5">
               <img
-                class="round profile-picture mr-1 flex-shrink-0"
+                class="w-48 flex-shrink-0 rounded-full mr-4 border-4 border-accent shadow-inner"
                 src="./assets/images/jonas.jpg"
                 alt=""
               />
@@ -294,10 +319,10 @@
               </p>
             </article>
 
-            <article class="flex items-center ml-2">
+            <article class="flex items-center mx-5">
               <img
-                class="round profile-picture mr-1 flex-shrink-0"
-                src="./assets/images/rieke2.jpg"
+                class="w-48 flex-shrink-0 rounded-full mr-4 border-4 border-accent shadow-inner"
+                src="./assets/images/rieke.jpg"
                 alt=""
               />
               <p>
@@ -315,14 +340,13 @@
 
       <section
         id="anmelden"
-        class="w-full text-white mb-5 flex flex-col"
-        style="min-height: 600px"
+        class="w-full text-white mb-24 flex flex-col min-h-160 -mt-24 pt-24"
       >
         <div
-          class="w-full flex-grow card bg-primary-gradient grid-content-width mx-auto flex flex-col p-7"
+          class="w-full flex-grow rounded-xl shadow-md bg-primary-gradient max-w-4xl mx-auto flex flex-col p-20"
         >
-          <h2 class="mb-5">Anmeldung</h2>
-          <div class="mr-4 ml-4">
+          <h2 class="mb-12">Anmeldung</h2>
+          <div class="mx-10">
             <p class="mb-2">
               Sichere dir jetzt deinen Platz für den Workshop!<br />Damit wir
               planen können, benötigen wir eine verbindliche Anmeldung.
@@ -330,39 +354,55 @@
 
             <div class="w-full flex flex-grow">
               <form action="./api/mail.php" method="POST">
-                <div class="input">
+                <div class="field mb-1">
                   <input
                     type="text"
                     required
+                    placeholder=" "
                     autocomplete="name"
                     id="name"
                     name="name"
+                    class="text-white bg-black-30 focus:bg-white-30"
                   />
                   <label for="name">Name</label>
                 </div>
-                <div class="input">
-                  <input type="number" required id="semester" name="semester" />
+                <div class="field mb-1">
+                  <input
+                    type="number"
+                    required
+                    placeholder=" "
+                    id="semester"
+                    name="semester"
+                    class="text-white bg-black-30 focus:bg-white-30"
+                  />
                   <label for="semester">Semester</label>
                 </div>
-                <div class="input">
+                <div class="field mb-6">
                   <input
                     type="email"
+                    placeholder=" "
                     required
                     autocomplete="email"
                     id="email"
                     name="email"
+                    class="text-white bg-black-30 focus:bg-white-30"
                   />
                   <label for="email">Mail</label>
                 </div>
-                <button type="submit">Absenden</button>
+                <button
+                  class="button text-white bg-black-30 focus:outline-none hover:bg-white-30 focus:bg-white-30"
+                  type="submit"
+                >
+                  Absenden
+                </button>
               </form>
 
               <div class="relative flex-grow">
                 <img
                   src="./assets/images/anmeldung.svg"
                   alt=""
-                  class="absolute t-0 l-0"
-                  style="left:9rem;top:-5rem;width: 150%;height:150%;"
+                  class="absolute top-0 left-0"
+                  style="left:5rem;top:-2rem;width:130%;height:130%;"
                 />
               </div>
             </div>
@@ -371,12 +411,11 @@
       </section>
 
       <footer
-        class="w-full p-2 flex items-center text-accent grid-max-width mx-auto font-bolder"
+        class="w-full pb-4 flex items-center text-accent max-w-4xl xl:max-w-6xl mx-auto font-normal hover:text-primary focus-within:text-primary"
       >
         <a
-          class="mr-auto mb-0 line-0"
+          class="mr-auto mb-0 outline-none border-t-2 border-b-2 border-transparent focus:border-accent"
           href="https://dmp-bremerhaven.de"
-          target="_blank"
           rel="noopener noreferer"
         >
           <svg
@@ -384,42 +423,33 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 841.89 595.28"
             preserveAspectRatio="xMidYMid meet"
+            class="fill-current"
           >
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: var(--accent);
-                }
-              </style>
-            </defs>
-            <path class="cls-1" d="M354.43,383.93h-39.6V215.64h39.6V383.93Z" />
-            <rect
-              class="cls-1"
-              x="401.94"
-              y="215.64"
-              width="39.6"
-              height="168.29"
-            />
-            <rect
-              class="cls-1"
-              x="489.06"
-              y="215.78"
-              width="39.6"
-              height="168.29"
-            />
+            <path d="M354.43,383.93h-39.6V215.64h39.6V383.93Z" />
+            <rect x="401.94" y="215.64" width="39.6" height="168.29" />
+            <rect x="489.06" y="215.78" width="39.6" height="168.29" />
             <path
-              class="cls-1"
               d="M227.71,81V235.13c-15.37-13.28-35.34-23.24-57.24-23.24a87.7,87.7,0,0,0,0,175.39c21.9,0,42.08-10.08,57.45-23.36l-.21,20h39.6V81ZM170.47,351.55a52,52,0,1,1,0-103.93c34.32,0,55.82,23.27,55.82,52S204.54,351.55,170.47,351.55Z"
             />
             <path
-              class="cls-1"
               d="M615.77,514.27V364.39c15.37,13.27,35.35,23.23,57.25,23.23,48.43,0,86.09-39.26,86.09-87.69S721.45,212.24,673,212.24c-21.9,0-42.08,10.08-57.45,23.35l.2-20H576.18V514.27ZM673,248c28.7,0,50.62,20.27,50.62,52,0,28.7-21.92,52-50.62,52-32.72,0-56-23.26-56-52S638.64,248,673,248Z"
             />
           </svg>
         </a>
 
-        <a href="./impressum.html">Impressum</a>
-        <a href="./datenschutz.html" class="ml-1">Datenschutz</a>
+        <a
+          href="./impressum.html"
+          class="mr-2 hover:underline outline-none focus:underline"
+        >
+          Impressum
+        </a>
+        <span class="pb-1">•</span>
+        <a
+          href="./datenschutz.html"
+          class="ml-2 hover:underline outline-none focus:underline"
+        >
+          Datenschutz
+        </a>
       </footer>
     </main>
   </body>
