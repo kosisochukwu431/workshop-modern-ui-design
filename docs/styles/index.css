@@ -31,11 +31,12 @@
   @apply opacity-100;
 }
 
-body > svg {
+svg.leader-line {
   @apply hidden;
+  @apply overflow-hidden !important;
 }
 @screen lg {
-  body > svg {
+  svg.leader-line {
     @apply block;
   }
 }
