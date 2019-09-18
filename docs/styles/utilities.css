@@ -34,6 +34,18 @@
   .max-w-screen {
     max-width: 100vw;
   }
+  .top-4 {
+    top: 1rem;
+  }
+  .top-6 {
+    top: 1.5rem;
+  }
+  .top-8 {
+    top: 2rem;
+  }
+  .top-24 {
+    top: 6rem;
+  }
 }
 
 @responsive {
@@ -49,6 +61,13 @@
       180deg,
       theme("colors.primary.90") 0%,
       theme("colors.primary.50") 100%
+    );
+  }
+  .bg-primary-gradient-opaque {
+    background: linear-gradient(
+      180deg,
+      theme("colors.primary.default") 15%,
+      #a11cf278 100%
     );
   }
   .bg-accent-gradient {

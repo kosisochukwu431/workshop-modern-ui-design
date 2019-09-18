@@ -30,3 +30,12 @@
 .splash--visible h1 {
   @apply opacity-100;
 }
+
+body > svg {
+  @apply hidden;
+}
+@screen lg {
+  body > svg {
+    @apply block;
+  }
+}

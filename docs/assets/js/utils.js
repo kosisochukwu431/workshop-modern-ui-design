@@ -24,3 +24,5 @@ export function detectScrollBar() {
   body.removeChild(el);
   return hasScrollbar;
 }
+
+export const wait = time => new Promise(resolve => setTimeout(resolve, time));

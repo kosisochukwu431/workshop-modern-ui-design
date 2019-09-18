@@ -45,12 +45,19 @@
     <meta name="theme-color" content="#a11cf2" />
 
     <link rel="stylesheet" href="./assets/styles.css" />
+    <script type="module">
+      import { detectScrollBar } from "./assets/js/utils.js";
+      detectScrollBar();
+    </script>
     <script type="module" src="./assets/js/main.js"></script>
   </head>
 
   <body
     class="flex flex-col items-start font-light text-white lg:text-black min-h-full bg-primary lg:bg-transparent"
   >
+    <div class="container w-full max-w-4xl xl:max-w-6xl mx-auto">
+      <div class="w-16 js-line-1"></div>
+    </div>
     <div
       class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary lg:bg-gradient text-white shadow-xl"
     >
@@ -160,7 +167,7 @@
         class="container min-h-screen mb-10 pt-16 flex flex-col justify-center items-center lg:pt-0 lg:flex-row lg:justify-start lg:mb-20 lg:-mt-10 lg:max-w-4xl xxl:max-w-6xl"
       >
         <img
-          class="w-full max-w-lg mt-6 mb-3 lg:w-1/2 lg:max-w-full lg:my-0"
+          class="w-full max-w-lg mt-6 mb-3 lg:w-1/2 lg:max-w-full lg:my-0 xxl:w-5/12"
           src="./assets/images/drag.svg"
           alt="Illustration, die eine Hand zeigt, die auf einem abstrakten Smartphone-Interface Karten durch die Gegend schiebt"
         />
@@ -168,7 +175,7 @@
           class="w-full mt-3 mb-6 lg:my-0 lg:absolute top-0 h-full right-0 left-0 mx-auto max-w-4xl"
         >
           <div
-            class="lg:absolute top-1/2 lg:-translate-y-1/2 left-1/2 lg:mr-6 xxl:mr-0 lg:ml-20 lg:p-8 lg:-mt-6 lg:rounded-xl lg:shadow-md lg:bg-accent-gradient"
+            class="lg:absolute top-1/2 lg:-translate-y-1/2 left-1/2 lg:mr-6 xxl:mr-0 lg:ml-20 lg:p-8 lg:-mt-6 lg:rounded-xl lg:shadow-md lg:bg-accent-gradient js-line-2"
           >
             <p class="mb-2">
               Was ist UX-/UI Design? Wo liegt der Unterschied zwischen UX und
@@ -196,10 +203,10 @@
 
       <section
         id="termine"
-        class="container pt-20 -mt-20 mb-16 max-w-4xl text-white lg:mb-40 lg:-mt-64 lg:pt-24"
+        class="container pt-20 -mt-20 mb-16 max-w-4xl text-white lg:mb-40 lg:-mt-64 lg:pt-24 z-10"
       >
         <div
-          class="w-full lg:rounded-xl lg:shadow-md lg:bg-primary-gradient lg:p-20"
+          class="w-full lg:rounded-xl lg:shadow-md lg:bg-primary-gradient lg:p-20 js-line-3"
         >
           <h2 class="mb-8 lg:mb-12">Termine</h2>
 
@@ -289,7 +296,7 @@
         class="container max-w-4xl pt-24 -mt-24 mb-16 flex flex-col lg:mb-40"
       >
         <div
-          class="w-full lg:rounded-xl lg:shadow-md lg:bg-accent-gradient lg:p-20"
+          class="w-full lg:rounded-xl lg:shadow-md lg:bg-accent-gradient lg:p-20 js-line-4"
         >
           <h2 class="mb-8 lg:mb-12">About</h2>
 
@@ -334,7 +341,10 @@
         </div>
       </section>
 
-      <section id="wir" class="w-full text-white pt-24 -mt-24 mb-16 lg:mb-40">
+      <section
+        id="wir"
+        class="w-full text-white pt-24 -mt-24 mb-16 lg:mb-40 z-10"
+      >
         <div class="w-full bg-gradient shadow-inner py-16 lg:py-20">
           <h3 class="text-center mb-8 lg:mb-12">Wer wir sind</h3>
 
@@ -395,8 +405,12 @@
         class="container max-w-4xl pt-20 -mt-20 mb-32 flex text-white lg:min-h-160 lg:mb-40"
       >
         <div
-          class="w-full flex-grow lg:rounded-xl lg:shadow-md lg:bg-primary-gradient flex flex-col lg:p-20"
+          class="w-full flex-grow lg:rounded-xl lg:shadow-md lg:bg-primary-gradient-opaque flex flex-col lg:p-20 relative"
         >
+          <div
+            class="absolute top-24 left-0 js-line-5"
+            aria-hidden="true"
+          ></div>
           <h2 class="mb-8 lg:mb-12">Anmeldung</h2>
           <div class="lg:mx-10">
             <p class="mb-2">

@@ -1,7 +1,6 @@
 import { $, create, detectScrollBar } from "./utils.js";
 import Vivus from "./vivus.js";
-
-detectScrollBar();
+import { showLines } from "./lines.js";
 
 /* Smoothscroll-Polyfills laden */
 if (!("scrollBehavior" in create("a").style)) {
@@ -14,7 +13,8 @@ if (!("scrollBehavior" in create("a").style)) {
     defer: true
   });
 
-  document.head.append(smoothscrollPolyfill, smoothscrollAnchorPolyfill);
+  document.head.appendChild(smoothscrollPolyfill);
+  document.head.appendChild(smoothscrollAnchorPolyfill);
 }
 
 const splashHeaderContainer = $(".splash-header-container");
@@ -39,6 +39,7 @@ function animateSplashLogo() {
       setTimeout(() => {
         document.body.classList.remove("overflow-hidden");
         splashHeaderContainer.classList.remove("h-full");
+        showLines();
       }, 700);
     }
   );
@@ -46,7 +47,7 @@ function animateSplashLogo() {
 
 if (splashHeaderContainer.classList.contains("h-full")) {
   animateSplashLogo();
-}
+} else showLines();
 
 if (typeof IntersectionObserver !== "undefined") {
   const observedBtn = $(".js-observed-signup");
