@@ -31,5 +31,11 @@
   },
   "dependencies": {
     "tailwindcss": "^1.1.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100
   }
 }

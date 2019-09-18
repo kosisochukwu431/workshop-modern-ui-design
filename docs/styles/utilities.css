@@ -52,29 +52,25 @@
   .bg-gradient {
     background: linear-gradient(
       275.25deg,
-      theme("colors.accent.default") 2.12%,
-      theme("colors.primary.default") 86.62%
+      theme('colors.accent.default') 2.12%,
+      theme('colors.primary.default') 86.62%
     );
   }
   .bg-primary-gradient {
     background: linear-gradient(
       180deg,
-      theme("colors.primary.90") 0%,
-      theme("colors.primary.50") 100%
+      theme('colors.primary.90') 0%,
+      theme('colors.primary.50') 100%
     );
   }
   .bg-primary-gradient-opaque {
-    background: linear-gradient(
-      180deg,
-      theme("colors.primary.default") 15%,
-      #a11cf278 100%
-    );
+    background: linear-gradient(180deg, theme('colors.primary.default') 15%, #a11cf278 100%);
   }
   .bg-accent-gradient {
     background: linear-gradient(
       180deg,
-      theme("colors.accent.90") 0%,
-      theme("colors.accent.50") 100%
+      theme('colors.accent.90') 0%,
+      theme('colors.accent.50') 100%
     );
   }
 }

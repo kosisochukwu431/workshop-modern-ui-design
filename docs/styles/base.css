@@ -3,7 +3,7 @@
 html {
   scroll-behavior: smooth;
   --scroll-behavior: smooth;
-  scrollbar-color: theme("colors.primary.default") theme("colors.accent.50");
+  scrollbar-color: theme('colors.primary.default') theme('colors.accent.50');
   scrollbar-width: thin;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
