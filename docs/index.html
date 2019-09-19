@@ -364,8 +364,8 @@
           class="w-full flex-grow lg:rounded-xl lg:shadow-md lg:bg-primary-gradient-opaque flex flex-col lg:p-20 relative"
         >
           <div class="absolute top-24 left-0 js-line-5" aria-hidden="true"></div>
-          <h2 class="mb-8 lg:mb-12">Anmeldung</h2>
-          <div class="lg:mx-10">
+          <div class="lg:mx-10 js-signup-form">
+            <h2 class="mb-8 lg:mb-12">Anmeldung</h2>
             <p class="mb-2">
               Sichere dir jetzt deinen Platz für den Workshop!<br />
               Damit wir planen können, benötigen wir eine verbindliche Anmeldung.
@@ -373,7 +373,7 @@
 
             <div class="relative w-full flex-grow flex flex-col lg:flex-row">
               <form
-                action="http://mui.riekehelmers.com/api/mail.php"
+                action="https://jonaskuske.com/mui/api/signup.php"
                 method="POST"
                 class="w-56 lg:w-auto"
               >
@@ -429,6 +429,66 @@
               </div>
             </div>
           </div>
+          <div class="lg:mx-10 hidden js-signup-success">
+            <h2 class="mb-8 lg:mb-12">Deine Anmeldung war erfolgreich!</h2>
+            <p class="mb-3 leading-relaxed">
+              Du erhältst in Kürze ein Bestätigungs-Email.<br />
+              Wir freuen uns auf dich! 🚀
+            </p>
+            <a
+              href="./?%E2%8F%AC#anmelden"
+              class="font-medium underline hover:text-accent focus:text-accent"
+            >
+              Neue Anmeldung
+            </a>
+            <img
+              class="-mb-12 mt-12 mx-auto max-w-lg"
+              src="./assets/images/online_party.svg"
+              alt="Illustration einer fröhlichen tanzenden Frau in Party-Stimmung"
+            />
+          </div>
+          <div class="lg:mx-10 hidden js-signup-error">
+            <h2 class="mb-8 lg:mb-12">Die Anmeldung ist leider fehlgeschlagen.</h2>
+            <p class="mb-3 leading-relaxed">
+              Bitte überprüfe deine Eingaben oder versuche es später nochmal.<br />
+              Du kannst uns auch einfach
+              <a href="#about" class="text-accent">direkt anschreiben</a>! 🤞🏻
+            </p>
+            <a
+              href="./?⏬#anmelden"
+              class="font-medium underline hover:text-accent focus:text-accent"
+            >
+              Erneut versuchen
+            </a>
+            <img
+              class="-mb-12 mt-12 mx-auto max-w-lg lg:max-w-96"
+              src="./assets/images/server_down.svg"
+              alt="Illustration einer fröhlichen tanzenden Frau in Party-Stimmung"
+            />
+          </div>
+          <script type="module">
+            import { $ } from './assets/js/utils.js'
+
+            const isSuccess = /☑|%E2%98%91/.test(window.location.search)
+            const isError = /❌|%E2%9D%8C/.test(window.location.search)
+            const skip = /⏬|%E2%8F%AC/.test(window.location.search) || isSuccess || isError
+
+            if (isSuccess) {
+              $('.js-signup-form').classList.add('hidden')
+              $('.js-signup-success').classList.remove('hidden')
+            } else if (isError) {
+              $('.js-signup-form').classList.add('hidden')
+              $('.js-signup-error').classList.remove('hidden')
+            }
+
+            const enableSmoothscroll = () => {
+              const prev = document.documentElement.getAttribute('style') || ''
+              document.documentElement.setAttribute('style', 'scroll-behavior:smooth;' + prev)
+            }
+
+            if (skip) setTimeout(enableSmoothscroll, 2000)
+            else enableSmoothscroll()
+          </script>
         </div>
       </section>
 
@@ -438,7 +498,6 @@
         <a
           class="mr-auto mb-0 outline-none border-t-2 border-b-2 border-transparent focus:border-accent"
           href="https://dmp-bremerhaven.de"
-          rel="noopener noreferer"
         >
           <svg
             width="80"

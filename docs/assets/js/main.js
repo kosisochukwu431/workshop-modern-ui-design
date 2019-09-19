@@ -1,20 +1,10 @@
-import { $, create, detectScrollBar } from './utils.js'
+import { $, create } from './utils.js'
 import Vivus from './vivus.js'
 import { showLines } from './lines.js'
 
-/* Smoothscroll-Polyfills laden */
 if (!('scrollBehavior' in create('a').style)) {
-  const smoothscrollPolyfill = create('script', {
-    src: 'https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js',
-    defer: true,
-  })
-  const smoothscrollAnchorPolyfill = create('script', {
-    src: 'https://unpkg.com/smoothscroll-anchor-polyfill',
-    defer: true,
-  })
-
-  document.head.appendChild(smoothscrollPolyfill)
-  document.head.appendChild(smoothscrollAnchorPolyfill)
+  const polyfillSource = create('script', { src: './assets/js/smoothscroll.js' })
+  document.head.appendChild(polyfillSource)
 }
 
 const splashHeaderContainer = $('.splash-header-container')
