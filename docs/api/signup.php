@@ -1,6 +1,7 @@
 <?php
-set_exception_handler(function () {
-  respond('Internal Server Error.', 500);
+set_exception_handler(function ($error) {
+  $msg = $error->getMessage();
+  respond('Internal Server Error: ' . $msg, 500);
 });
 
 // Allow CORS
@@ -17,12 +18,12 @@ $accepts_json = strpos($accept, 'application/json') !== false;
 
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
 
-// Handle CORS Preflight (OPTIONS) requests
+// Allow all OPTIONS (especially CORS Preflight) requests
 if (strcasecmp($req_method, 'OPTIONS') == 0) {
   respond(null, 200);
 }
 
-// Only accept text/html and applicatin/json as requested response content type
+// Only accept text/html and application/json as requested response content type
 if (!$accepts_html && !$accepts_json) {
   respond('Endpoint can only respond with text/html or application/json as Content-Type.', 406);
 }
@@ -76,11 +77,7 @@ if (
  *
  */
 
-$mail_sent = send_notice($user);
-if (!$mail_sent) {
-  // throw new Exception("Couldn't send email!");
-}
-
+send_notice($user);
 send_confirmation($user);
 respond('Anmeldung erfolgreich!', 200, $user);
 
@@ -171,12 +168,17 @@ function send_mail($to, $subject, $message)
 
   $headers = [
     'From' => 'workshop@modernui.com',
-    'Reply-To' => $self_mail,
-    'Subject' => $subject,
+    'Reply-To' => strval($self_mail),
     'MIME-Version' => '1.0',
     'Content-Type' => 'text/plain; charset=utf-8',
     'X-Mailer' => 'PHP/' . phpversion()
   ];
 
-  return mail($to, $subject, $message, implode("\r\n", $headers));
+  $success = mail($to, $subject, $message, $headers);
+
+  if (!$success) {
+    throw new Exception('mail() errored.');
+  }
+
+  return $success;
 }
