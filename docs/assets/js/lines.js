@@ -2,7 +2,7 @@ import { $, create, wait } from './utils.js'
 
 let markAsReady
 const scriptReady = new Promise(resolve => (markAsReady = resolve))
-const script = create('script', { src: 'https://unpkg.com/leader-line' })
+const script = create('script', { src: './assets/js/leader-line.min.js' })
 script.onload = markAsReady
 
 const primary = '#A11CF2'
