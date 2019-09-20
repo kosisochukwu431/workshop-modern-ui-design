@@ -1,7 +1,12 @@
 <?php
+$DEBUG = false;
+$self_mail = 'Jonas Kuske <mail@jonaskuske.com>, Rieke Helmers <mail@riekehelmers.com>';
+
 set_exception_handler(function ($error) {
-  $msg = $error->getMessage();
-  respond('Internal Server Error: ' . $msg, 500);
+  global $DEBUG;
+
+  $message = $error->getMessage();
+  respond("Internal Server Error" . ($DEBUG ? ": $message" : ""), 500);
 });
 
 // Allow CORS
@@ -66,7 +71,7 @@ if (
   strlen(trim($user['semester'])) == 0 ||
   filter_var($user['email'], FILTER_VALIDATE_EMAIL) == false
 ) {
-  respond('Invalid data.', 400);
+  respond('Invalid or missing data.', 400);
 }
 
 /**
@@ -78,7 +83,14 @@ if (
  */
 
 send_notice($user);
-send_confirmation($user);
+
+try {
+  send_confirmation($user);
+} catch (Exception $error) {
+  $msg = $error->getMessage();
+  error_log("Fehler beim Senden der Bestätigung an {$user['name']} <{$user['email']}>: $msg");
+}
+
 respond('Anmeldung erfolgreich!', 200, $user);
 
 /**
@@ -91,18 +103,19 @@ respond('Anmeldung erfolgreich!', 200, $user);
 
 function respond($message, $code, $data = null)
 {
-  global $accepts_html, $accepts_json, $referer;
+  global $accepts_html, $accepts_json, $referer, $DEBUG;
   $is_error = $code >= 300;
 
   if ($accepts_html) {
     if ($referer) {
       $url = preg_replace('/\?.*/', '', $referer);
-      $query = $is_error ? '?❌&code=' . strval($code) : '?☑';
+      $query = '?' . ($is_error ? '❌' : '☑');
+      if ($DEBUG && $is_error) $query .= "&code=$code&msg=$message";
       header('Location: ' . $url . $query . '#anmelden');
     } else {
       header('Content-Type: text/html');
       http_response_code($code);
-      echo "<h1>${$message}</h1>";
+      echo "<p>" . ($is_error ? "<b>$code</b>: "  : '') . "$message</p>";
     }
   } elseif ($accepts_json) {
     http_response_code($code);
@@ -114,8 +127,6 @@ function respond($message, $code, $data = null)
 
   die();
 }
-
-$self_mail = 'Jonas Kuske <mail@jonaskuske.com>, Rieke Helmers <mail@riekehelmers.com>';
 
 function send_notice($user)
 {
@@ -141,15 +152,16 @@ euer PHP Script :-)";
 
 function send_confirmation($user)
 {
+  $first_name = explode(' ', trim($user["name"]))[0];
   $subject = 'Deine Anmeldung zum Workshop';
-  $message = "Hallo {$user['name']},
+  $message = "Hallo $first_name,
 
-Vielen Dank für deine Anmeldung zu unserem Workshop.
+vielen Dank für deine Anmeldung zu unserem Workshop.
 Hier noch einmal alle Termine im Überblick:
 
-Workshop 1: 28.10.2019,
-Workshop 2: 11.11.2019,
-Workshop 3: 25.11.2019,
+Workshop 1: 28.10.2019
+Workshop 2: 11.11.2019
+Workshop 3: 25.11.2019
 Workshop 4: 09.12.2019
 
 Einige Tage vor den Workshops erinnern wir dich nochmal per E-Mail.
@@ -168,7 +180,7 @@ function send_mail($to, $subject, $message)
 
   $headers = [
     'From' => 'workshop@modernui.com',
-    'Reply-To' => strval($self_mail),
+    'Reply-To' => $self_mail,
     'MIME-Version' => '1.0',
     'Content-Type' => 'text/plain; charset=utf-8',
     'X-Mailer' => 'PHP/' . phpversion()
@@ -177,7 +189,7 @@ function send_mail($to, $subject, $message)
   $success = mail($to, $subject, $message, $headers);
 
   if (!$success) {
-    throw new Exception('mail() errored.');
+    throw new Exception('mail() errored, please check mail.log');
   }
 
   return $success;

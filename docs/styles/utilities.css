@@ -51,6 +51,11 @@
   }
 }
 
+.smoothscroll {
+  scroll-behavior: smooth;
+  --scroll-behavior: smooth;
+}
+
 @responsive {
   .bg-gradient {
     background: linear-gradient(

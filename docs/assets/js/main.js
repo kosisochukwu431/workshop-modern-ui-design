@@ -52,4 +52,4 @@ if (typeof IntersectionObserver !== 'undefined') {
   )
 
   observer.observe(observedBtn)
-}
+} else headerBtn.classList.add('lg:max-w-full')

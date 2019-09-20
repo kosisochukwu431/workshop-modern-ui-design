@@ -216,7 +216,7 @@
               <time
                 class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
               >
-                28.10.2019<br class="hidden lg:inline" />
+                11.11.2019<br class="hidden lg:inline" />
                 <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
@@ -235,7 +235,7 @@
               <time
                 class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
               >
-                28.10.2019<br class="hidden lg:inline" />
+                25.11.2019<br class="hidden lg:inline" />
                 <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
@@ -254,7 +254,7 @@
               <time
                 class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
               >
-                28.10.2019<br class="hidden lg:inline" />
+                09.12.2019<br class="hidden lg:inline" />
                 <span class="font-light ml-2">
                   10:30 - 15:30 Uhr
                 </span>
@@ -373,7 +373,7 @@
 
             <div class="relative w-full flex-grow flex flex-col lg:flex-row">
               <form
-                action="https://data.wassersportzentrum-alte-feuerwache.de/mui/signup.php"
+                action="https://api.dmp-bremerhaven.de/modernui/signup.php"
                 method="POST"
                 class="w-56 lg:w-auto"
               >
@@ -481,10 +481,7 @@
               $('.js-signup-error').classList.remove('hidden')
             }
 
-            const enableSmoothscroll = () => {
-              const prev = document.documentElement.getAttribute('style') || ''
-              document.documentElement.setAttribute('style', 'scroll-behavior:smooth;' + prev)
-            }
+            const enableSmoothscroll = () => $('html').classList.add('smoothscroll')
 
             if (skip) setTimeout(enableSmoothscroll, 2000)
             else enableSmoothscroll()
