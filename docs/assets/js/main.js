@@ -21,6 +21,7 @@ function animateSplashLogo() {
       duration: 110,
       pathTimingFunction: Vivus.EASE_OUT_BOUNCE,
       onReady: () => {
+        splashLogo.classList.remove('invisible')
         setTimeout(() => splashLogo.classList.add('show-dot'), 1250)
       },
     },
