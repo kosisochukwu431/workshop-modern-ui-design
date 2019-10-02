@@ -1,16 +1,16 @@
 <?php
 $DEBUG = false;
-$self_mail = 'Jonas Kuske <mail@jonaskuske.com>, Rieke Helmers <mail@riekehelmers.com>';
+$self_mail = 'Modern UI Design <workshop@modern-ui.design>';
 
 set_exception_handler(function ($error) {
   global $DEBUG;
 
   $message = $error->getMessage();
-  respond("Internal Server Error" . ($DEBUG ? ": $message" : ""), 500);
+  respond('Internal Server Error' . ($DEBUG ? ": $message" : ''), 500);
 });
 
 // Allow CORS
-header('Access-Control-Allow-Origin: https://jonaskuske.github.io');
+header('Access-Control-Allow-Origin: https://modern-ui.design');
 header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With');
 
@@ -110,12 +110,14 @@ function respond($message, $code, $data = null)
     if ($referer) {
       $url = preg_replace('/\?.*/', '', $referer);
       $query = '?' . ($is_error ? '❌' : '☑');
-      if ($DEBUG && $is_error) $query .= "&code=$code&msg=$message";
+      if ($DEBUG && $is_error) {
+        $query .= "&code=$code&msg=$message";
+      }
       header('Location: ' . $url . $query . '#anmelden');
     } else {
       header('Content-Type: text/html');
       http_response_code($code);
-      echo "<p>" . ($is_error ? "<b>$code</b>: "  : '') . "$message</p>";
+      echo '<p>' . ($is_error ? "<b>$code</b>: " : '') . "$message</p>";
     }
   } elseif ($accepts_json) {
     http_response_code($code);
@@ -152,7 +154,7 @@ euer PHP Script :-)";
 
 function send_confirmation($user)
 {
-  $first_name = explode(' ', trim($user["name"]))[0];
+  $first_name = explode(' ', trim($user['name']))[0];
   $subject = 'Deine Anmeldung zum Workshop';
   $message = "Hallo $first_name,
 
@@ -179,7 +181,7 @@ function send_mail($to, $subject, $message)
   global $self_mail;
 
   $headers = [
-    'From' => 'workshop@modernui.com',
+    'From' => $self_mail,
     'Reply-To' => $self_mail,
     'MIME-Version' => '1.0',
     'Content-Type' => 'text/plain; charset=utf-8',
