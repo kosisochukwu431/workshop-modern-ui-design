@@ -2,11 +2,6 @@ import { $, create } from './utils.js'
 import Vivus from './vivus.js'
 import { showLines } from './lines.js'
 
-if (!('scrollBehavior' in create('a').style)) {
-  const polyfillSource = create('script', { src: './assets/js/smoothscroll.js' })
-  document.head.appendChild(polyfillSource)
-}
-
 const splashHeaderContainer = $('.splash-header-container')
 
 function animateSplashLogo() {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="h-100 antialiased">
+<html lang="de" class="h-100 antialiased scrollbar-primary">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,14 +19,16 @@
       <link rel="shortcut icon" href="./assets/icons/favicon.ico">
     <![endif]-->
 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="msapplication-TileColor" content="#a11cf2" />
     <meta name="msapplication-config" content="./assets/icons/browserconfig.xml" />
     <meta name="theme-color" content="#a11cf2" />
 
     <link rel="stylesheet" href="./assets/styles.css" />
     <script type="module">
-      import { detectScrollBar } from './assets/js/utils.js'
+      import { detectScrollBar, polyfill } from './assets/js/utils.js'
       detectScrollBar()
+      polyfill()
     </script>
     <script type="module" src="./assets/js/main.js"></script>
   </head>
@@ -184,81 +186,93 @@
           <h2 class="mb-8 lg:mb-12">Termine</h2>
 
           <ol class="m-0 p-0 lg:mx-10 mb-3">
-            <li
-              class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start"
-            >
-              <div class="flex-grow-full m-2">
-                <h3 class="mb-0">1 – Flowing through the process</h3>
-                <p>
-                  Designprozess – warum, was, wie und wie nicht? Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit.
-                </p>
-              </div>
-              <time
-                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+            <li>
+              <a
+                href="./flowing-through-the-process.html"
+                class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start hover:no-underline focus:no-underline"
               >
-                28.10.2019<br class="hidden lg:inline" />
-                <span class="font-light ml-2">
-                  10:30 - 15:30 Uhr
-                </span>
-              </time>
+                <div class="flex-grow-full m-2">
+                  <h3 class="mb-0">1 – Flowing through the process</h3>
+                  <p>
+                    Designprozess – warum, was, wie und wie nicht? Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                  </p>
+                </div>
+                <time
+                  class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+                >
+                  28.10.2019<br class="hidden lg:inline" />
+                  <span class="font-light ml-2">
+                    10:30 - 15:30 Uhr
+                  </span>
+                </time>
+              </a>
             </li>
-            <li
-              class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start"
-            >
-              <div class="flex-grow-full m-2">
-                <h3 class="mb-0">2 – Make it pretty, make it work</h3>
-                <p>
-                  Usability-Patterns, Farben, Typografie, Animationen – Design-Tipps und wichtiges
-                  Basiswissen
-                </p>
-              </div>
-              <time
-                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+            <li>
+              <a
+                href="./make-it-pretty-make-it-work.html"
+                class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start hover:no-underline focus:no-underline"
               >
-                11.11.2019<br class="hidden lg:inline" />
-                <span class="font-light ml-2">
-                  10:30 - 15:30 Uhr
-                </span>
-              </time>
+                <div class="flex-grow-full m-2">
+                  <h3 class="mb-0">2 – Make it pretty, make it work</h3>
+                  <p>
+                    Usability-Patterns, Farben, Typografie, Animationen – Design-Tipps und wichtiges
+                    Basiswissen
+                  </p>
+                </div>
+                <time
+                  class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+                >
+                  11.11.2019<br class="hidden lg:inline" />
+                  <span class="font-light ml-2">
+                    10:30 - 15:30 Uhr
+                  </span>
+                </time>
+              </a>
             </li>
-            <li
-              class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start"
-            >
-              <div class="flex-grow-full m-2">
-                <h3 class="mb-0">3 – Design for everyone</h3>
-                <p>
-                  Von Smartwatch bis TV und Tastatur bis Screenreader: Interfaces bauen, die in
-                  jeder Situation funktionieren
-                </p>
-              </div>
-              <time
-                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+            <li>
+              <a
+                href="./design-for-everyone.html"
+                class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start hover:no-underline focus:no-underline"
               >
-                25.11.2019<br class="hidden lg:inline" />
-                <span class="font-light ml-2">
-                  10:30 - 15:30 Uhr
-                </span>
-              </time>
+                <div class="flex-grow-full m-2">
+                  <h3 class="mb-0">3 – Design for everyone</h3>
+                  <p>
+                    Von Smartwatch bis TV und Tastatur bis Screenreader: Interfaces bauen, die in
+                    jeder Situation funktionieren
+                  </p>
+                </div>
+                <time
+                  class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+                >
+                  25.11.2019<br class="hidden lg:inline" />
+                  <span class="font-light ml-2">
+                    10:30 - 15:30 Uhr
+                  </span>
+                </time>
+              </a>
             </li>
-            <li
-              class="flex flex-wrap items-center leading-relaxed -m-2 md:flex-no-wrap lg:items-start"
-            >
-              <div class="flex-grow-full m-2">
-                <h3 class="mb-0">4 – Action!</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ad, quos
-                  quaerat repellendus in!
-                </p>
-              </div>
-              <time
-                class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+            <li>
+              <a
+                href="./action.html"
+                class="flex flex-wrap items-center leading-relaxed mb-6 -m-2 md:flex-no-wrap lg:items-start hover:no-underline focus:no-underline"
               >
-                09.12.2019<br class="hidden lg:inline" />
-                <span class="font-light ml-2">
-                  10:30 - 15:30 Uhr
-                </span>
-              </time>
+                <div class="flex-grow-full m-2">
+                  <h3 class="mb-0">4 – Action!</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ad, quos
+                    quaerat repellendus in!
+                  </p>
+                </div>
+                <time
+                  class="bg-white text-primary text-center rounded-full px-4 py-2 flex-shrink-0 flex-grow font-bold m-2 lg:ml-20 lg:bg-transparent lg:text-white lg:p-0 lg:rounded-none lg:text-right"
+                >
+                  09.12.2019<br class="hidden lg:inline" />
+                  <span class="font-light ml-2">
+                    10:30 - 15:30 Uhr
+                  </span>
+                </time>
+              </a>
             </li>
           </ol>
         </div>
