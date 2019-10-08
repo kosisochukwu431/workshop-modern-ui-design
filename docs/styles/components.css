@@ -59,9 +59,11 @@ input:focus + label {
 .btn-signup {
   opacity: 0;
   overflow: hidden;
-  transition: max-width 250ms ease, opacity 300ms ease;
+  visibility: hidden;
+  transition: max-width 250ms ease, opacity 300ms ease, visibility 0ms 310ms;
 }
 .btn-signup.lg\:max-w-full {
   opacity: 1;
+  visibility: visible;
   transition: max-width 300ms ease-in, opacity 250ms 50ms ease-in;
 }
