@@ -33,7 +33,8 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "tailwindcss": "^1.1.2"
+    "tailwindcss": "^1.1.2",
+    "tailwindcss-interaction-variants": "^2.2.0"
   },
   "lint-staged": {
     "*.{js,json,css,md,html}": [

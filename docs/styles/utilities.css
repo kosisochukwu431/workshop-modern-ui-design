@@ -1,11 +1,29 @@
 @tailwind utilities;
 
+.transition-transform {
+  transition-property: transform;
+}
+.transition-opacity {
+  transition-property: opacity;
+}
+.transition-0\.1 {
+  transition-duration: 100ms;
+}
+.transition-ease-in {
+  transition-timing-function: ease-in;
+}
+
 @responsive {
   .-translate-x-1\/2 {
     transform: translateX(-50%);
   }
   .-translate-y-1\/2 {
     transform: translateY(-50%);
+  }
+  @variants hover,focus {
+    .translate-x-4 {
+      transform: translateX(1rem);
+    }
   }
 
   .pb-1\/2 {
