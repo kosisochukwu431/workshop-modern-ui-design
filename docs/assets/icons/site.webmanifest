@@ -1,6 +1,7 @@
 {
   "name": "Modern UI Design",
   "short_name": "Modern UI",
+  "start_url": "./#start",
   "icons": [
     {
       "src": "./android-chrome-192x192.png",
