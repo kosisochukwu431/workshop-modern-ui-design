@@ -12,6 +12,10 @@ html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+::selection {
+  @apply bg-accent;
+}
+
 body {
   @apply font-body font-light leading-normal;
 }
