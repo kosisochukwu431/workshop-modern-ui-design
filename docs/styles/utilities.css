@@ -13,6 +13,10 @@
   transition-timing-function: ease-in;
 }
 
+.icon-link::after {
+  content: ' 🔗';
+}
+
 @responsive {
   .-translate-x-1\/2 {
     transform: translateX(-50%);
