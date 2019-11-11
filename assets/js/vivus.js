@@ -521,7 +521,7 @@ function i(t, e, r) {
       r = t.getAttribute('data-ignore')
     return null !== r
       ? 'false' !== r
-      : !!this.ignoreInvisible && (!(e = t.getBoundingClientRect()).width && !e.height)
+      : !!this.ignoreInvisible && !(e = t.getBoundingClientRect()).width && !e.height
   }),
   (i.prototype.parseAttr = function(t) {
     var e,
