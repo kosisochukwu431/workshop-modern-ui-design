@@ -12,10 +12,6 @@ html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-::selection {
-  @apply bg-accent;
-}
-
 body {
   @apply font-body font-light leading-normal;
 }
@@ -40,6 +36,43 @@ a:focus {
   @apply underline outline-none;
 }
 
+/* Selection styles */
+::selection,
+.bg-primary::selection,
+.bg-primary ::selection,
+.bg-primary-gradient::selection,
+.bg-primary-gradient ::selection {
+  @apply bg-accent;
+}
+
+.bg-white::selection,
+.bg-white ::selection,
+.bg-accent::selection,
+.bg-accent ::selection,
+.bg-accent-gradient::selection,
+.bg-accent-gradient ::selection {
+  @apply bg-primary text-white;
+}
+
+@screen lg {
+  .lg\:bg-primary::selection,
+  .lg\:bg-primary ::selection,
+  .lg\:bg-primary-gradient::selection,
+  .lg\:bg-primary-gradient ::selection {
+    @apply bg-accent;
+  }
+
+  .lg\:bg-white::selection,
+  .lg\:bg-white ::selection,
+  .lg\:bg-accent::selection,
+  .lg\:bg-accent ::selection,
+  .lg\:bg-accent-gradient::selection,
+  .lg\:bg-accent-gradient ::selection {
+    @apply bg-primary text-white;
+  }
+}
+
+/* Scrollbar styles */
 .scrollbar ::-webkit-scrollbar,
 .scrollbar::-webkit-scrollbar {
   @apply w-2;
