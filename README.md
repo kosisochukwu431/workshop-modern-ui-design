@@ -6,11 +6,11 @@
 <br>
 <br>
 
-<a href="https://modern-ui.design"><img src="docs/assets/images/snippet.png"></a>
+<a href="https://modern-ui.design"><img src="assets/images/snippet.png"></a>
 
 <br>
 <br>
 
 Repository for the design workshop »Modern UI Design«, taught by
 [Rieke Helmers](https://riekehelmers.com) and [Jonas Kuske](https://jonaskuske.com) at HS Bremerhaven.
-Work in Progress.
+Constantly updated to match workshop progress.
