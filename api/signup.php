@@ -188,7 +188,7 @@ function send_mail($to, $subject, $message)
     'X-Mailer' => 'PHP/' . phpversion()
   ];
 
-  $success = mail($to, $subject, $message, $headers);
+  $success = mail($to, '=?utf-8?B?' . base64_encode($subject) . '?=', $message, $headers);
 
   if (!$success) {
     throw new Exception('mail() errored, please check mail.log');
