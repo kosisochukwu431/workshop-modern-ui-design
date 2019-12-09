@@ -108,7 +108,7 @@
             href="#anmelden"
             class="m-1 ml-4 button text-white bg-black-30 focus:bg-black-50 hover:bg-black-50 outline-none focus:shadow-outline"
           >
-            Anmelden
+            Feedback
           </a>
         </div>
       </header>
@@ -179,15 +179,15 @@
               </span>
             </p>
             <p class="mb-6">
-              Diese Fragen und mehr klären wir in unserem 4-teiligen Workshop zum Thema Modern UI
-              Design. Seid dabei und meldet euch jetzt an!
+              Diese Fragen und mehr waren Thema unseres 4-teiligen Workshops zum Thema Modern UI
+              Design. Das sagen die Teilnehmer*innen:
             </p>
             <div class="text-center">
               <a
                 href="#anmelden"
                 class="js-observed-signup button text-white bg-black-30 focus:bg-black-50 hover:bg-black-50 outline-none focus:shadow-outline"
               >
-                Anmelden
+                Feedback
               </a>
             </div>
           </div>
@@ -332,18 +332,21 @@
               näherbringen. Im Fokus steht dabei unser Leitspruch »Context is king«. Wir wollen
               nicht nur theoretische Grundlagen bieten, sondern insbesondere zeigen, wie das Wissen
               sinnvoll angewendet werden kann und wie wichtig UI Design eigentlich ist. Oh, und
-              natürlich wird das kein Frontalunterricht: wir wollen alles gemeinsam mit euch
+              natürlich ist das kein Frontalunterricht: wir wollen alles gemeinsam mit euch
               erarbeiten.
             </p>
 
             <h3 class="mb-6">Was muss ich beachten?</h3>
+            <p class="mb-2">
+              <span class="font-bold">Hinweis:</span> der Workshop ist beendet; eine Teilnahme ist
+              nicht mehr möglich.
+            </p>
             <p class="mb-6">
               Der Workshop wird an 4 Terminen im Designlabor der Hochschule Bremerhaven stattfinden.
               Es sind alle willkommen, allerdings gehen wir von Grundkenntnissen im Designbereich
               aus – für Erstsemester ohne sonstige Vorerfahrung ist der Workshop also nur bedingt
               geeignet. Mitzubringen ist nach Möglichkeit ein Laptop, Stift und Papier und natürlich
-              gute Laune. 🚀<br /><br />
-              Interesse? <a href="#anmelden">Dann jetzt gleich anmelden!</a>
+              gute Laune. 🚀
             </p>
             <h3 class="mb-6">Fragen?</h3>
             <p>
@@ -415,7 +418,103 @@
           class="w-full flex-grow lg:rounded-xl lg:shadow-md lg:bg-primary-gradient-opaque flex flex-col lg:p-20 relative"
         >
           <div class="absolute top-24 left-0 js-line-5" aria-hidden="true"></div>
-          <div class="lg:mx-10 js-signup-form">
+          <div class="lg:mx-10">
+            <h2 class="mb-8 lg:mb-12">Danke für eure Teilnahme!</h2>
+
+            <div
+              class="bg-white rounded-lg text-black flex flex-col mb-10 p-4"
+              style="min-height: 220px;"
+            >
+              <blockquote class="p-6 px-10 relative my-auto self-center">
+                <span
+                  class="absolute bottom-0 left-0 text-6xl text-accent font-bold leading-none p-2"
+                >
+                  „
+                </span>
+                <span class="js-feedback-output">
+                  Danke für eure Unterstützung, fühl mich jetzt wesentlich besser vorbereitet für
+                  alles, was kommt. :)
+                </span>
+                <span
+                  class="absolute top-8 -translate-y-1/2 right-0 text-6xl text-accent font-bold leading-none p-2"
+                >
+                  ”
+                </span>
+              </blockquote>
+              <div class="flex justify-between">
+                <button
+                  aria-label="Vorheriges Feedback"
+                  title="Vorheriges Feedback"
+                  class="js-feedback-prev border-b-4 border-transparent hover:border-accent focus:border-accent focus:outline-none font-sans"
+                >
+                  ◀
+                </button>
+                <button
+                  aria-label="Nächstes Feedback"
+                  title="Nächstes Feedback"
+                  class="js-feedback-next border-b-4 border-transparent hover:border-accent focus:border-accent focus:outline-none font-sans"
+                >
+                  ▶
+                </button>
+              </div>
+            </div>
+
+            <script>
+              const messages = [
+                'Danke für eure Unterstützung, fühl mich jetzt wesentlich besser vorbereitet für alles, was kommt. :)',
+                'Toller Workshop! Ich habe wirklich viel gelernt und gerade die praktischen Arbeiten haben viel Spaß gemacht!',
+                'Würde mich über weitere Veranstaltungen dieser Art freuen.',
+                'War ne tolle Erfahrung, gerne wieder :-)',
+                'Die Übungen haben echt viel Spaß gemacht und waren lehrreich.',
+                'War supi, vielen Dank!',
+                'Es wird alles sehr gut erklärt und auf Fragen eingegangen. Atmosspähre ist auch super :-)',
+                'Top, vielen Dank euch gerne nochmal',
+                'Praktische Arbeit, gute Stimmung, support ist immer da! Snacks waren super, danke!',
+                'Theorie und Praxis haben super ineinander gegriffen, auf Fragen wurde immer sofort eingegangen',
+                'War alles super!',
+              ]
+
+              const output = document.querySelector('.js-feedback-output')
+              const btnPrev = document.querySelector('.js-feedback-prev')
+              const btnNext = document.querySelector('.js-feedback-next')
+
+              let current = 0
+              let timeoutId = null
+
+              const next = () => {
+                clearTimeout(timeoutId)
+                if (++current === messages.length) current = 0
+                output.textContent = messages[current]
+                timeoutId = setTimeout(next, 4000)
+              }
+              const prev = () => {
+                clearTimeout(timeoutId)
+                if (--current === 0) current = messages.length - 1
+                output.textContent = messages[current]
+                timeoutId = setTimeout(next, 4000)
+              }
+
+              btnPrev.addEventListener('click', prev)
+              btnNext.addEventListener('click', next)
+              next()
+            </script>
+
+            <p>
+              Wir hatten sehr viel Spaß – danke für die tolle Atmosphäre und die gute Mitarbeit!
+              <span class="font-sans">❤</span>
+            </p>
+            <p class="text-right text-accent mb-2 font-display font-bold">
+              — <a href="https://jonaskuske.com">Jonas</a> &
+              <a href="https://riekehelmers.com">Rieke</a>
+            </p>
+
+            <img
+              class="-mb-12 ml-auto max-w-full lg:max-w-96"
+              src="./assets/images/undraw_having_fun_iais.svg"
+              alt="Ein trauriges Roboterwesen vor einem dunklen, abgeschalteten Server."
+            />
+          </div>
+          <div class="lg:mx-10 js-signup-form hidden">
             <h2 class="mb-8 lg:mb-12">Anmeldung</h2>
             <p class="mb-2">
               Sichere dir jetzt deinen Platz für den Workshop!<br />
@@ -493,12 +592,12 @@
               Neue Anmeldung
             </a>
             <img
-              class="-mb-12 mt-12 mx-auto max-w-lg"
+              class="-mb-12 mt-12 ml-auto max-w-lg"
               src="./assets/images/online_party.svg"
               alt="Illustration einer fröhlichen tanzenden Frau in Party-Stimmung"
             />
           </div>
-          <div class="lg:mx-10 hidden js-signup-error">
+          <div class="lg:mx-10 js-signup-error hidden">
             <h2 class="mb-8 lg:mb-12">Die Anmeldung ist leider fehlgeschlagen.</h2>
             <p class="mb-3 leading-relaxed">
               Bitte überprüfe deine Eingaben oder versuche es später nochmal.<br />
@@ -512,7 +611,7 @@
               Erneut versuchen
             </a>
             <img
-              class="-mb-12 mt-12 mx-auto max-w-full lg:max-w-96"
+              class="-mb-12 mt-12 ml-auto max-w-full lg:max-w-96"
               src="./assets/images/server_down.svg"
               alt="Ein trauriges Roboterwesen vor einem dunklen, abgeschalteten Server."
             />
