@@ -1,29 +1,12 @@
-# design-with-code
+<h1 align=center>design-with-code</h1>
 
-## Project setup
+<br>
+<br>
 
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
+1) Diesen Ordner herunterladen
+2) [Node installieren](https://nodejs.org/de/)
+3) Ordner in präferiertem Editor (Empfehlung: [VS Code](https://code.visualstudio.com/)) öffnen
+4) Befehl `npm run serve` oder `npm run serve:styleguide` ausführen (in VS Code: `Terminal → Run Task...`)
 
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> Alternativ: [Online bearbeiten](https://codesandbox.io/s/design-with-code-6sce4) (aber langsamer und ohne Styleguide!)
