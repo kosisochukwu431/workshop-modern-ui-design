@@ -16,9 +16,10 @@
         maiores non voluptatum quam quas! Repellendus, dolores.
       </span>
     </p>
+
     <footer>
-      <RouterLink to="/profil" tag="button">Speichern</RouterLink>
-      <RouterLink to="/profil" tag="button">Abbrechen</RouterLink>
+      <RouterLink to="/profil" tag="BaseButton">Speichern</RouterLink>
+      <RouterLink to="/profil" tag="BaseButton">Abbrechen</RouterLink>
     </footer>
   </main>
 </template>
@@ -36,6 +37,7 @@ img {
 }
 
 footer {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
 }

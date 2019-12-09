@@ -1,13 +1,12 @@
 {
-  "name": "mui-base",
+  "name": "design-with-code",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "vue-cli-service build --modern",
+    "serve:styleguide": "start-storybook --quiet -p 6006",
+    "build:styleguide": "build-storybook --quiet -o dist/styleguide"
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -17,7 +16,9 @@
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
+    "@storybook/addon-viewport": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/vue": "^5.2.8",
     "@vue/cli-plugin-babel": "^4.1.0",

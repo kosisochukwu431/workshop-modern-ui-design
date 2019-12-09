@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li>
-        <BottomNavItem to="/" icon="📑">Feed</BottomNavItem>
+        <BottomNavItem to="/feed" icon="📑">Feed</BottomNavItem>
       </li>
       <li>
         <BottomNavItem to="/preiswecker" icon="⏰">Preiswecker</BottomNavItem>
@@ -45,5 +45,9 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+li > :not(.router-link-active) {
+  opacity: 0.5;
 }
 </style>

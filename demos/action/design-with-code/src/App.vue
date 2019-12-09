@@ -1,12 +1,12 @@
 <template>
   <div class="app">
-    <Header class="header"></Header>
+    <Header></Header>
 
     <transition name="fade" mode="out-in">
       <RouterView class="page" />
     </transition>
 
-    <BottomNav class="bottom-nav"></BottomNav>
+    <BottomNav></BottomNav>
   </div>
 </template>
 
@@ -14,29 +14,38 @@
 export default {}
 </script>
 
-<style src="./assets/styles.css"></style>
+<style src="./assets/preflight.css"></style>
+<style src="./assets/typography.css"></style>
 
 <style>
-.app {
-  /* Header & BottomNav bedecken oben und unten den Bildschirm, also darf hier kein Content hin  */
-  padding-top: 60px;
-  padding-bottom: 60px;
+/* Sorgt dafür, dass die Seite immer mindestens so hoch ist wie der Bildschirm */
+html {
+  width: 100%;
+  height: 100%;
 }
-
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .app,
 .page {
-  /* Sorgt dafür, dass die Seite immer mindestens so hoch ist wie der Bildschirm */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.header,
-.page {
-  padding-left: 16px;
-  padding-right: 16px;
+/* Header & BottomNav bedecken oben und unten den Bildschirm, also darf hier kein Content hin  */
+.app {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
+.page {
+  padding: 0 16px;
+}
+
+/* Fade-Transition bei Navigation zwischen Seiten */
 .fade-enter-active {
   transition: opacity 100ms ease-in;
 }

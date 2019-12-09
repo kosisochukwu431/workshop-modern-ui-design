@@ -15,6 +15,7 @@ export default {}
 <style scoped>
 header {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -22,6 +23,7 @@ header {
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px 1px;
   height: 60px;
+  padding: 0 16px;
 }
 
 .logo-wrapper {

@@ -1,4 +1,4 @@
-# mui-base
+# design-with-code
 
 ## Project setup
 

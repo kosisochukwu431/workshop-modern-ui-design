@@ -18,8 +18,8 @@
     </p>
 
     <footer>
-      <RouterLink to="/profil/bearbeiten" tag="button">Bearbeiten</RouterLink>
-      <button>Abmelden</button>
+      <RouterLink to="/profil/bearbeiten" tag="BaseButton">Bearbeiten</RouterLink>
+      <BaseButton>Abmelden</BaseButton>
     </footer>
   </main>
 </template>
@@ -37,6 +37,7 @@ img {
 }
 
 footer {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
 }
