@@ -473,6 +473,8 @@
                 'Theorie und Praxis haben super ineinander gegriffen, auf Fragen wurde immer sofort eingegangen',
                 'War alles super!',
               ]
+              const first = 0
+              const last = messages.length - 1
 
               const output = document.querySelector('.js-feedback-output')
               const btnPrev = document.querySelector('.js-feedback-prev')
@@ -482,15 +484,15 @@
               let timeoutId = null
 
               const next = () => {
-                clearTimeout(timeoutId)
-                if (++current === messages.length) current = 0
+                if (++current > last) current = first
                 output.textContent = messages[current]
+                clearTimeout(timeoutId)
                 timeoutId = setTimeout(next, 4000)
               }
               const prev = () => {
-                clearTimeout(timeoutId)
-                if (--current === 0) current = messages.length - 1
+                if (--current < first) current = last
                 output.textContent = messages[current]
+                clearTimeout(timeoutId)
                 timeoutId = setTimeout(next, 4000)
               }
 
