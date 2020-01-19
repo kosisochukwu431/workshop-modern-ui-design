@@ -11,6 +11,10 @@
   @apply shadow-outline no-underline;
 }
 
+.card {
+  @apply bg-white text-primary rounded-lg;
+}
+
 /* Input w/ floating label */
 .field {
   @apply flex flex-col-reverse;
