@@ -1,0 +1,79 @@
+.container {
+  padding-top: 0 !important;
+}
+
+.print\:block {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600 !important;
+  page-break-after: avoid;
+}
+
+body > .splash-header-container,
+body > footer {
+  display: none !important;
+}
+
+table,
+figure,
+ul,
+ol,
+.no-break-inside {
+  page-break-inside: avoid;
+}
+
+.text-white {
+  color: #000 !important;
+}
+.bg-primary {
+  background: none;
+}
+.card {
+  background: none;
+  border: 2px solid currentColor;
+  page-break-inside: avoid;
+}
+
+.sm\:flex-row {
+  flex-direction: row;
+}
+.sm\:mb-0 {
+  margin-bottom: 0;
+}
+.sm\:hidden {
+  display: none;
+}
+.sm\:inline {
+  display: inline;
+}
+.sm\:mr-2 {
+  margin-right: 0.5rem;
+}
+.sm\:ml-2 {
+  margin-left: 0.5rem;
+}
+.sm\:text-right {
+  text-align: right;
+}
+.sm\:mr-4 {
+  margin-right: 1rem;
+}
+.sm\:ml-8 {
+  margin-left: 2rem;
+}
+.sm\:text-left {
+  text-align: left;
+}
+.sm\:inline-block {
+  display: inline-block;
+}
+.sm\:ml-4 {
+  margin-left: 1rem;
+}
