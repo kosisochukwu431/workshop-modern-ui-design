@@ -15,6 +15,13 @@
   @apply bg-white text-primary rounded-lg;
 }
 
+@media print {
+  .card {
+    border-color: currentColor;
+    @apply bg-transparent border-2;
+  }
+}
+
 /* Input w/ floating label */
 .field {
   @apply flex flex-col-reverse;

@@ -1,4 +1,4 @@
-<html lang="de" class="h-full scrollbar-accent smoothscroll handout">
+<html lang="de" class="h-full scrollbar-accent smoothscroll">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,7 @@
 
   <body class="flex flex-col items-start font-light bg-primary text-white min-h-full">
     <div
-      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary lg:bg-gradient text-white shadow-xl"
+      class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary lg:bg-gradient text-white shadow-xl print:hidden"
     >
       <header
         class="header container visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
@@ -146,7 +146,7 @@
       </nav>
     </aside>
 
-    <div class="container max-w-4xl xl:max-w-6xl mx-auto pt-24 lg:pt-32 mb-16 leading-relaxed">
+    <div class="container max-w-4xl xl:max-w-6xl mx-auto pt-20 mb-16 leading-relaxed print:pt-0">
       <header class="hidden print:block text-center text-3xl font-bold font-display my-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +181,31 @@
       <h1 class="sr-only">Handout</h1>
 
       <main>
-        <section class="mb-10">
+        <header class="mb-2 md:mb-0 md:flex relative print:hidden">
+          <div
+            class="flex justify-between md:absolute right-0 top-0 md:inline-flex md:flex-col bg-accent rounded-lg shadow py-2 px-6"
+          >
+            <a
+              class="font-bold flex items-center md:flex-row-reverse mr-2 md:mr-0 md:mb-1 hocus:text-primary"
+              href="https://api.dmp-bremerhaven.de/modernui/Handout.pdf"
+            >
+              <!-- prettier-ignore -->
+              <svg class="inline fill-current w-5 mr-1 md:mr-0 md:ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M81.6 6h-33v29a1 1 0 01-1 1h-29v18h63zM18.6 88.6h63v7.5h-63z"/><path d="M46.6 7.4L33.3 20.7 20 34.1h26.6V7.4zM85.6 56H14.4a3.4 3.4 0 00-3.4 3.4v23.8a3.4 3.4 0 003.4 3.4h71.2a3.4 3.4 0 003.4-3.4V59.4a3.4 3.4 0 00-3.4-3.4zM35.5 74h-2.9v6a1 1 0 01-1 1h-2.2a1 1 0 01-1-1V62.6a1 1 0 011-1h6c4.4 0 6.8 2.2 6.8 6.2S39.8 74 35.4 74zm14.8 7h-5.8a1 1 0 01-1-1V62.6a1 1 0 011-1h5.8c6.2 0 9.7 3.5 9.7 9.7S56.6 81 50.3 81zm24-16.4a1 1 0 01-1 1H66v4h6.2a1 1 0 011 1v2a1 1 0 01-1 1H66V80a1 1 0 01-1 1h-2.2a1 1 0 01-1-1V62.6a1 1 0 011-1h10.5a1 1 0 011 1z"/><path d="M55.7 71.3c0-2-.5-3.5-1.4-4.4a5.4 5.4 0 00-4-1.3h-2.5V77h2.5c3.8 0 5.4-1.8 5.4-5.8zM37.9 67.8c0-1.6-.7-2.2-2.4-2.2h-2.9V70h2.9c2 0 2.4-.9 2.4-2.2z"/></g></svg>
+              PDF anzeigen
+            </a>
+
+            <button
+              class="font-bold flex items-center md:flex-row-reverse ml-2 md:ml-0 hocus:underline hocus:text-primary focus:outline-none"
+              onclick="window.print()"
+            >
+              <!-- prettier-ignore -->
+              <svg class="inline fill-current w-5 mr-1 md:mr-0 md:ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M37.9 72.4h24.2c1.9 0 3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4H37.9c-1.9 0-3.4 1.5-3.4 3.4s1.5 3.4 3.4 3.4zM65.5 78.1h-31a3.4 3.4 0 00-3.4 3.4c0 1.9 1.5 3.4 3.4 3.4h31.1c1.9 0 3.4-1.5 3.4-3.4a3.6 3.6 0 00-3.5-3.4z"/><path d="M87.8 28H76.1V16.5c0-.9-.4-1.7-1-2.4L64.5 3.5c-.6-.6-1.5-1-2.4-1H27.3a3.4 3.4 0 00-3.4 3.4V28H12.2a8.6 8.6 0 00-8.6 8.6v28.6c0 4.8 3.9 8.6 8.6 8.6h6.2l-6 19.3c-.3 1-.1 2.2.5 3 .6.9 1.7 1.4 2.7 1.4h68.8c1.1 0 2.1-.5 2.7-1.4s.8-2 .5-3l-6-19.3h6.2c4.8 0 8.6-3.9 8.6-8.6V36.6a8.5 8.5 0 00-8.6-8.6zM30.7 9.3h27.4V17c0 1.9 1.5 3.4 3.4 3.4h7.8V28H30.7V9.3zM14.4 43c0-1.9 1.5-3.4 3.4-3.4h6.6c1.8 0 3.4 1.5 3.4 3.4s-1.6 3.4-3.4 3.4h-6.6a3.4 3.4 0 01-3.4-3.4zm5.8 47.7l9.6-30.9h40.3l9.6 30.9H20.2z"/></svg>
+              Drucken
+            </button>
+          </div>
+        </header>
+
+        <section class="mb-10 md:mt-12">
           <h2 class="mb-4 text-center" id="was-ist-ui-ux-design">Was ist UI/UX-Design?</h2>
 
           <blockquote class="mb-6 text-center max-w-3xl mx-auto">
@@ -381,7 +405,7 @@
             <img class="w-full min-w-0 shadow" src="./assets/images/styleguide.jpg" alt="" />
           </div>
 
-          <p class="max-w-3xl mx-auto mb-4">
+          <p class="max-w-3xl mx-auto mb-4 sm:text-center">
             Farbe, Typografie und Weißraum helfen sehr stark dabei, enge, überfüllte Layouts besser
             zu strukturieren. Durch den bewussten Einsatz von Farbe an den richtigen Stellen, durch
             die Verwendung verschiedener Schriftgrößen und Schriftschnitte und durch das Hinzufügen
@@ -389,7 +413,7 @@
             übersichtlicher gestaltet werden:
           </p>
 
-          <div class="card p-4 text-center mb-10">
+          <div class="card p-4 text-center mb-10 print:max-w-xl print:mx-auto">
             <img class="w-full shadow" src="./assets/images/hierarchie_bad.jpg" alt="" />
             <p class="my-1 text-2xl">↓</p>
             <img class="w-full shadow" src="./assets/images/hierarchie_good.jpg" alt="" />
@@ -442,14 +466,12 @@
           </p>
         </section>
 
-        <section>
+        <section class="mb-10">
           <h2 class="text-center mb-8" style="page-break-before: always;" id="accessibility">
             Accessibility
           </h2>
 
-          <div
-            class="flex flex-col sm:flex-row justify-between max-w-3xl mx-auto no-break-inside mb-10"
-          >
+          <div class="flex flex-col sm:flex-row justify-between max-w-3xl mx-auto mb-10">
             <div class="flex-1 flex flex-col mb-4 sm:mb-0">
               <p class="mb-4 sm:mr-2">
                 <span class="font-semibold">Form over Function!</span>
@@ -473,7 +495,7 @@
             </figure>
           </div>
 
-          <div class="flex flex-col sm:flex-row justify-between max-w-3xl mx-auto mb-8">
+          <div class="flex flex-col sm:flex-row justify-between max-w-3xl mx-auto">
             <div class="flex-1 sm:mr-4">
               <div class="card flex mb-4 p-2 overflow-hidden relative">
                 <img class="w-12 h-12 mr-2" src="./assets/images/figma.jpg" alt="" />
@@ -517,9 +539,11 @@
         </section>
 
         <section class="mb-10">
-          <h2 class="text-center mb-8" id="responsive-design">Responsive Design</h2>
+          <h2 class="text-center mb-8" id="responsive-design" style="page-break-before: always;">
+            Responsive Design
+          </h2>
 
-          <div class="flex flex-col sm:flex-row max-w-3xl mx-auto mb-8 no-break-inside">
+          <div class="flex flex-col sm:flex-row max-w-3xl mx-auto mb-8">
             <div class="flex-1 mb-8 sm:mb-0 sm:mr-4">
               <p class="mb-4">
                 Mit Smartphone anfangen (»Mobile First«), dann größere Screens designen, um den
@@ -578,11 +602,8 @@
           </p>
         </section>
 
-        <section class="max-w-3xl mx-auto my-24">
-          <blockquote
-            class="text-xl font-display text-center"
-            cite="https://refactoringui.com/book/"
-          >
+        <section class="max-w-3xl mx-auto text-center my-24 print:my-0">
+          <blockquote class="text-xl font-display mb-8" cite="https://refactoringui.com/book/">
             »By continually studying the work that inspires you with a careful eye, you’ll be
             picking up design tricks for years to come.«
             <footer>
@@ -592,9 +613,33 @@
               </cite>
             </footer>
           </blockquote>
+
+          <div
+            class="flex justify-between md:inline-flex bg-accent rounded-lg shadow py-2 px-6 print:hidden"
+          >
+            <a
+              class="font-bold flex items-center mr-2 hocus:text-primary"
+              href="https://api.dmp-bremerhaven.de/modernui/Handout.pdf"
+            >
+              <!-- prettier-ignore -->
+              <svg class="inline fill-current w-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M81.6 6h-33v29a1 1 0 01-1 1h-29v18h63zM18.6 88.6h63v7.5h-63z"/><path d="M46.6 7.4L33.3 20.7 20 34.1h26.6V7.4zM85.6 56H14.4a3.4 3.4 0 00-3.4 3.4v23.8a3.4 3.4 0 003.4 3.4h71.2a3.4 3.4 0 003.4-3.4V59.4a3.4 3.4 0 00-3.4-3.4zM35.5 74h-2.9v6a1 1 0 01-1 1h-2.2a1 1 0 01-1-1V62.6a1 1 0 011-1h6c4.4 0 6.8 2.2 6.8 6.2S39.8 74 35.4 74zm14.8 7h-5.8a1 1 0 01-1-1V62.6a1 1 0 011-1h5.8c6.2 0 9.7 3.5 9.7 9.7S56.6 81 50.3 81zm24-16.4a1 1 0 01-1 1H66v4h6.2a1 1 0 011 1v2a1 1 0 01-1 1H66V80a1 1 0 01-1 1h-2.2a1 1 0 01-1-1V62.6a1 1 0 011-1h10.5a1 1 0 011 1z"/><path d="M55.7 71.3c0-2-.5-3.5-1.4-4.4a5.4 5.4 0 00-4-1.3h-2.5V77h2.5c3.8 0 5.4-1.8 5.4-5.8zM37.9 67.8c0-1.6-.7-2.2-2.4-2.2h-2.9V70h2.9c2 0 2.4-.9 2.4-2.2z"/></g></svg>
+              PDF anzeigen
+            </a>
+
+            <button
+              class="font-bold flex items-center ml-2 hocus:underline hocus:text-primary focus:outline-none"
+              onclick="window.print()"
+            >
+              <!-- prettier-ignore -->
+              <svg class="inline fill-current w-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M37.9 72.4h24.2c1.9 0 3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4H37.9c-1.9 0-3.4 1.5-3.4 3.4s1.5 3.4 3.4 3.4zM65.5 78.1h-31a3.4 3.4 0 00-3.4 3.4c0 1.9 1.5 3.4 3.4 3.4h31.1c1.9 0 3.4-1.5 3.4-3.4a3.6 3.6 0 00-3.5-3.4z"/><path d="M87.8 28H76.1V16.5c0-.9-.4-1.7-1-2.4L64.5 3.5c-.6-.6-1.5-1-2.4-1H27.3a3.4 3.4 0 00-3.4 3.4V28H12.2a8.6 8.6 0 00-8.6 8.6v28.6c0 4.8 3.9 8.6 8.6 8.6h6.2l-6 19.3c-.3 1-.1 2.2.5 3 .6.9 1.7 1.4 2.7 1.4h68.8c1.1 0 2.1-.5 2.7-1.4s.8-2 .5-3l-6-19.3h6.2c4.8 0 8.6-3.9 8.6-8.6V36.6a8.5 8.5 0 00-8.6-8.6zM30.7 9.3h27.4V17c0 1.9 1.5 3.4 3.4 3.4h7.8V28H30.7V9.3zM14.4 43c0-1.9 1.5-3.4 3.4-3.4h6.6c1.8 0 3.4 1.5 3.4 3.4s-1.6 3.4-3.4 3.4h-6.6a3.4 3.4 0 01-3.4-3.4zm5.8 47.7l9.6-30.9h40.3l9.6 30.9H20.2z"/></svg>
+              Drucken
+            </button>
+          </div>
         </section>
 
-        <section class="max-w-3xl mx-auto opacity-50 hover:opacity-100 focus-within:opacity-100">
+        <section
+          class="max-w-3xl mx-auto opacity-50 hover:opacity-100 focus-within:opacity-100 print:opacity-100"
+        >
           <h2 class="text-center mb-8" id="quellen">Quellen</h2>
 
           <h3 class="text-center mb-4">Seite 1 (PDF)</h3>
@@ -696,7 +741,7 @@
     </div>
 
     <footer
-      class="container pb-4 flex items-center text-white max-w-4xl xl:max-w-6xl mx-auto mt-auto font-normal"
+      class="container pb-4 flex items-center text-white max-w-4xl xl:max-w-6xl mx-auto mt-auto font-normal print:hidden"
     >
       <a
         class="mr-auto mb-0 outline-none border-t-2 border-b-2 border-transparent focus:border-accent"

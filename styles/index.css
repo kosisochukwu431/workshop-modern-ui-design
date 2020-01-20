@@ -41,7 +41,9 @@ svg.leader-line {
   }
 }
 
-.handout h2[id] {
-  margin-top: -4.5rem;
-  padding-top: 4.5rem;
+@media screen {
+  h2[id] {
+    margin-top: -4.5rem;
+    padding-top: 4.5rem;
+  }
 }

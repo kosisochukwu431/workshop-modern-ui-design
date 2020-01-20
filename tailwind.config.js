@@ -39,7 +39,16 @@ module.exports = {
     },
   },
   variants: {
-    textColor: ['responsive', 'hover', 'focus', 'focus-within', 'group-hover', 'group-focus'],
+    textColor: [
+      'responsive',
+      'hover',
+      'focus',
+      'hocus',
+      'focus-within',
+      'group-hover',
+      'group-focus',
+    ],
+    textDecoration: ['responsive', 'hover', 'focus', 'hocus'],
     opacity: ['responsive', 'hover', 'focus', 'focus-within', 'group-hover', 'group-focus'],
   },
   plugins: [require('tailwindcss-interaction-variants')()],

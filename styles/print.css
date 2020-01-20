@@ -1,46 +1,51 @@
-.container {
-  padding-top: 0 !important;
-}
-
-.print\:block {
-  display: block;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 600 !important;
   page-break-after: avoid;
-}
-
-body > .splash-header-container,
-body > footer {
-  display: none !important;
 }
 
 table,
 figure,
 ul,
 ol,
-.no-break-inside {
+.card {
   page-break-inside: avoid;
 }
 
+/* Utility classes for print styles */
+.print\:block {
+  display: block;
+}
+.print\:hidden {
+  display: none !important;
+}
+.print\:max-w-xl {
+  max-width: 36rem !important;
+}
+.print\:opacity-100 {
+  opacity: 1 !important;
+}
+.print\:pt-0 {
+  padding-top: 0 !important;
+}
+.print\:mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.print\:my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Override styles to make them print friendly */
 .text-white {
   color: #000 !important;
 }
-.bg-primary {
-  background: none;
-}
-.card {
-  background: none;
-  border: 2px solid currentColor;
-  page-break-inside: avoid;
-}
 
+/* Simulate sm breakpoint for printing - hacky but works */
 .sm\:flex-row {
   flex-direction: row;
 }
