@@ -58,10 +58,11 @@
       class="splash-header-container fixed top-0 left-0 w-full h-16 z-20 flex bg-primary lg:bg-gradient text-white shadow-xl"
     >
       <script>
-        if (!window.location.hash) {
+        if (!window.location.hash && !sessionStorage.getItem('splash_shown')) {
           const container = document.querySelector('.splash-header-container')
           container.classList.add('h-full')
         }
+        sessionStorage.setItem('splash_shown', 1)
       </script>
       <header
         class="header container visible flex items-center w-full max-w-4xl xl:max-w-6xl mx-auto"
