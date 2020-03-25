@@ -31,6 +31,9 @@ ol,
 .print\:pt-0 {
   padding-top: 0 !important;
 }
+.print\:mb-4 {
+  margin-bottom: 1rem;
+}
 .print\:mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
