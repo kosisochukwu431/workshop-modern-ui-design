@@ -3,7 +3,7 @@ import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
 const requireComponent = require.context('./', true, /\.vue$/)
-requireComponent.keys().forEach(filePath => {
+requireComponent.keys().forEach((filePath) => {
   const componentConfig = requireComponent(filePath)
 
   const fileName = filePath.split('/').pop()

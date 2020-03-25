@@ -1,7 +1,7 @@
 import { $, create, wait } from './utils.js'
 
 let markAsReady
-const scriptReady = new Promise(resolve => (markAsReady = resolve))
+const scriptReady = new Promise((resolve) => (markAsReady = resolve))
 const script = create('script', { src: './assets/js/leader-line.min.js' })
 script.onload = markAsReady
 
@@ -57,7 +57,7 @@ export async function showLines() {
   document.head.appendChild(script)
   await scriptReady
 
-  const lines = config.map(c => new LeaderLine(Object.assign({}, defaultConfig, c)))
+  const lines = config.map((c) => new LeaderLine(Object.assign({}, defaultConfig, c)))
 
   for (const line of lines) {
     line.show('draw')

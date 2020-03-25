@@ -19,7 +19,7 @@ export default {
   computed: {
     product() {
       const id = Number(this.id)
-      return products.find(product => product.id === id)
+      return products.find((product) => product.id === id)
     },
   },
 }
