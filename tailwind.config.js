@@ -51,6 +51,6 @@ module.exports = {
     textDecoration: ['responsive', 'hover', 'focus', 'hocus'],
     opacity: ['responsive', 'hover', 'focus', 'focus-within', 'group-hover', 'group-focus'],
   },
-  plugins: [require('tailwindcss-interaction-variants')()],
+  plugins: [require('tailwindcss-interaction-variants')],
   corePlugins: {},
 }
