@@ -1,5 +1,5 @@
 import { $, create } from './utils.js'
-import Vivus from './vivus.js'
+import Vivus from './vivus.min.js'
 import { showLines } from './lines.js'
 
 const splashHeaderContainer = $('.splash-header-container')

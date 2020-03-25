@@ -13,7 +13,7 @@ export const create = (tag, attrs = {}) => {
 
 export const polyfill = () => {
   if (!('scrollBehavior' in create('a').style)) {
-    const polyfillSource = create('script', { src: './assets/js/smoothscroll.js' })
+    const polyfillSource = create('script', { src: './assets/js/smoothscroll.min.js' })
     document.head.appendChild(polyfillSource)
   }
 }

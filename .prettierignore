@@ -1,4 +1,2 @@
-assets/styles.css
-assets/js/smoothscroll.js
-assets/js/leader-line.min.js
-assets/js/vivus.js
+# don't prettify minified assets
+assets/**/*.min.*

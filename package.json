@@ -4,11 +4,11 @@
   "description": "The repo for the design workshop at HS Bremerhaven",
   "main": "index.html",
   "scripts": {
-    "start": "postcss styles/index.css -o assets/styles.css -w",
-    "build": "cross-env NODE_ENV=production postcss styles/index.css -o assets/styles.css"
+    "start": "postcss styles/index.css -o assets/styles.min.css -w",
+    "build": "cross-env NODE_ENV=production postcss styles/index.css -o assets/styles.min.css"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged && npm run build && git add assets/styles.css"
+    "pre-commit": "lint-staged && npm run build && git add assets/styles.min.css"
   },
   "repository": {
     "type": "git",
