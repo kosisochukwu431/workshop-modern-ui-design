@@ -34,7 +34,7 @@ module.exports = {
       maxWidth: { '7xl': '80rem' },
       inset: { '1/2': '50%' },
       borderRadius: { xl: '1.5rem' },
-      screens: { xxl: '1400px' },
+      screens: { xs: '370px', xxl: '1400px' },
       lineHeight: { normal: '22px' },
     },
   },
