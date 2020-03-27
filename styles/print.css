@@ -3,6 +3,17 @@
   margin: 1cm;
 }
 
+/* Hack for Safari as it doesn't respect `size: A4` */
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    html,
+    body {
+      width: 210mm;
+      height: 297mm;
+    }
+  }
+}
+
 h1,
 h2,
 h3,
