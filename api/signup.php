@@ -185,7 +185,7 @@ function send_mail($to, $subject, $message)
     'Reply-To' => $self_mail,
     'MIME-Version' => '1.0',
     'Content-Type' => 'text/plain; charset=utf-8',
-    'X-Mailer' => 'PHP/' . phpversion()
+    'X-Mailer' => 'PHP/' . phpversion(),
   ];
 
   $success = mail($to, '=?utf-8?B?' . base64_encode($subject) . '?=', $message, $headers);
